@@ -1,6 +1,0 @@
-C:\Users\dell\Desktop\S3\c#\covid19-project\bin\Debug\etat_covid2.dll
-C:\Users\dell\Desktop\S3\c#\covid19-project\bin\Debug\etat_covid2.pdb
-C:\Users\dell\Desktop\S3\c#\covid19-project\obj\Debug\etat_covid2.csprojAssemblyReference.cache
-C:\Users\dell\Desktop\S3\c#\covid19-project\obj\Debug\etat_covid2.csproj.CoreCompileInputs.cache
-C:\Users\dell\Desktop\S3\c#\covid19-project\obj\Debug\etat_covid2.dll
-C:\Users\dell\Desktop\S3\c#\covid19-project\obj\Debug\etat_covid2.pdb
