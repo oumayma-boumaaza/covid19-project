@@ -5,27 +5,29 @@
  ***********************************************************************/
 
 using System;
-
-public class Citoyen
+namespace EtatCovid
 {
-   public void S_identifier()
-   {
-      // TODO: implement
-   }
-   
-   public void FaireLeTest()
-   {
-      // TODO: implement
-   }
-   
-   public void S_examiner()
-   {
-      // TODO: implement
-   }
+    public class Citoyen
+    {
+        public void S_identifier()
+        {
+            // TODO: implement
+        }
 
-   private String Nom;
-   private String Prenom;
-   private int Cin;
-   private int Etat;
+        public void FaireLeTest()
+        {
+            // TODO: implement
+        }
 
+        public void S_examiner()
+        {
+            // TODO: implement
+        }
+
+        private String Nom;
+        private String Prenom;
+        private int Cin;
+        private int Etat;
+
+    }
 }

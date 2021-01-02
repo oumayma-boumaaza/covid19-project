@@ -5,18 +5,20 @@
  ***********************************************************************/
 
 using System;
-
-public class Labo
+namespace EtatCovid
 {
-   public void TesterLeCitoyen()
-   {
-      // TODO: implement
-   }
-   
-   public int DonnerLeResultat()
-   {
-      // TODO: implement
-      return 0;
-   }
+    public class Labo
+    {
+        public void TesterLeCitoyen()
+        {
+            // TODO: implement
+        }
 
+        public int DonnerLeResultat()
+        {
+            // TODO: implement
+            return 0;
+        }
+
+    }
 }

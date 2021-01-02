@@ -94,9 +94,13 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CentreDeVaccination.cs" />
     <Compile Include="Citoyen.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Confinement.cs" />
+    <Compile Include="EnregistrementLabo.cs" />
+    <Compile Include="EnregistrementsVaccin.cs" />
     <Compile Include="Labo.cs">
       <SubType>Code</SubType>
     </Compile>

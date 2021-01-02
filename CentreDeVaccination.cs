@@ -1,18 +1,20 @@
 /***********************************************************************
- * Module:  MinistereDeLaSante.cs
- * Author:  Oumayma Boumaaza
- * Purpose: Definition of the Class MinistereDeLaSante
+ * Module:  CentreDeVaccination.cs
+ * Author:  dell
+ * Purpose: Definition of the Class CentreDeVaccination
  ***********************************************************************/
 
 using System;
 namespace EtatCovid
 {
-    public class MinistereDeLaSante
+    public class CentreDeVaccination
     {
-        public void ModifierL_etat()
+        public void SeFaireVacciner()
         {
             // TODO: implement
         }
+
+        private String Nom;
 
     }
 }
