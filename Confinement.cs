@@ -12,5 +12,12 @@ namespace EtatCovid
         public DateTime DateDebut;
         public DateTime DateFin;
 
+    public Confinement(DateTime debut,DateTime fin)
+        {
+            DateDebut = debut;
+            DateFin = fin;
+        }
+
     }
+
 }

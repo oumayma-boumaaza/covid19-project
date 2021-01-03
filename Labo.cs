@@ -9,16 +9,36 @@ namespace EtatCovid
 {
     public class Labo
     {
-        public void TesterLeCitoyen()
+        public string nom
         {
-            // TODO: implement
+            get;
+        }
+        public Labo(string Nom)
+        {
+            nom = Nom;
         }
 
-        public int DonnerLeResultat()
+        public void TesterLeCitoyen(Citoyen citoyen)
         {
-            // TODO: implement
-            return 0;
+            Random rand = new Random();
+            bool resultat = rand.NextDouble() > 0.5;
+
+            DonnerLeResultat(resultat, citoyen);
         }
 
+        public string DonnerLeResultat(bool Resultat, Citoyen cit)
+        {
+            if (Resultat)
+            {
+                MinistereDeLaSante.ModifierL_etat(cit, Etat.PorteurDeVirus);
+                return "Le test est positif";
+            }
+            else
+            {
+                MinistereDeLaSante.ModifierL_etat(cit, Etat.Sain);
+                return "Le test est negatif";
+            }
+
+        }
     }
 }

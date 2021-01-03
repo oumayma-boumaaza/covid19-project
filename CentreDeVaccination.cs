@@ -5,16 +5,25 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 namespace EtatCovid
 {
-    public class CentreDeVaccination
+    class CentreDeVaccination
     {
-        public void SeFaireVacciner()
+        public string nomCentre
         {
-            // TODO: implement
+            get;
         }
-
-        private String Nom;
-
+        public CentreDeVaccination(string NomCentre)
+        {
+            nomCentre = NomCentre;
+        }
+        public void SeFaireVacciner(Citoyen citoyen)
+        {
+            MinistereDeLaSante.ModifierL_etat(citoyen, Etat.Vaccine);
+        }
     }
 }

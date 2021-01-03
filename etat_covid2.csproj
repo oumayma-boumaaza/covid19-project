@@ -9,14 +9,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>etat_covid2</AssemblyName>
+    <AssemblyName>EtatCovid</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>etat_covid2</RootNamespace>
+    <RootNamespace>EtatCovid</RootNamespace>
     <StartupObject />
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Confinement.cs" />
     <Compile Include="EnregistrementLabo.cs" />
+    <Compile Include="EnregistrementsEtat.cs" />
     <Compile Include="EnregistrementsVaccin.cs" />
     <Compile Include="Labo.cs">
       <SubType>Code</SubType>
@@ -107,6 +108,7 @@
     <Compile Include="MinistereDeLaSante.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Rencontre.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

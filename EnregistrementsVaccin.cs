@@ -10,6 +10,12 @@ namespace EtatCovid
     public class EnregistrementsVaccin
     {
         public DateTime DateVacc;
+        public string CinCitoyen;
+        public EnregistrementsVaccin(DateTime date,string cin)
+        {
+            DateVacc = date;
+            CinCitoyen = cin;
+        }
 
     }
 }

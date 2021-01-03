@@ -3,31 +3,49 @@
  * Author:  Boumaaza Oumayma
  * Purpose: Definition of the Class Citoyen
  ***********************************************************************/
-
 using System;
+using System.Collections.Generic;
+
 namespace EtatCovid
 {
+    public enum Etat
+    {
+        Symptomatique,
+        PorteurDeVirus,
+        Inexplore,
+        Sain,
+        Vaccine,
+    }
+    
+        
     public class Citoyen
     {
-        public void S_identifier()
+        private string last;
+        private string first;
+        public string cin;
+        public DateTime dateDeNaissaance { get; set;}
+        public List<Rencontre> rencontres;
+        public Etat etat{get;   set;}
+        
+        public Citoyen(string lastName, string firstName, string Cin, DateTime DateDeNaissance)
         {
-            // TODO: implement
+            last = lastName;
+            first = firstName;
+            cin = Cin;
+            dateDeNaissaance = DateDeNaissance;
+            etat = Etat.Inexplore;
+            rencontres = new List<Rencontre>();
         }
 
-        public void FaireLeTest()
+        public void Contacter(Citoyen citoyen)
         {
-            // TODO: implement
+            Rencontre rencontre = new Rencontre(DateTime.Now, this.cin, citoyen.cin);
+            this.rencontres.Add(rencontre);
+            citoyen.rencontres.Add(rencontre);
         }
-
-        public void S_examiner()
+        public void SeConfiner(DateTime debut, DateTime fin)
         {
-            // TODO: implement
+            
         }
-
-        private String Nom;
-        private String Prenom;
-        private int Cin;
-        private int Etat;
-
     }
-}
+}   

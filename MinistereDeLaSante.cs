@@ -6,13 +6,13 @@
 
 using System;
 namespace EtatCovid
-{
-    public class MinistereDeLaSante
-    {
-        public void ModifierL_etat()
-        {
-            // TODO: implement
-        }
 
+{
+    public static class MinistereDeLaSante
+    {
+        public static void ModifierL_etat(Citoyen citoyen, Etat etat)
+        {
+            citoyen.etat = etat;
+        }
     }
 }
