@@ -5,18 +5,29 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.Generic;
+
 namespace EtatCovid
 {
+
     public class EnregistrementLabo
     {
+        public static List<EnregistrementLabo> Testes = new List<EnregistrementLabo>();
         public DateTime DateTest;
         public string CinCitoyen;
         public bool Resultat;
-    public EnregistrementLabo(DateTime date,string cin,bool result)
+        public string NomLabo;
+        private EnregistrementLabo(DateTime date, string cin, bool result,string nomLabo)
         {
             DateTest = date;
             CinCitoyen = cin;
             Resultat = result;
+            NomLabo = nomLabo;
+        }
+
+        public static void EnregistrerTest(DateTime date, string cin, bool result,string nomLabo)
+        {
+            Testes.Add(new EnregistrementLabo(date, cin, result,nomLabo));
         }
     }
 }

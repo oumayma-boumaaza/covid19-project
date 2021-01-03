@@ -23,6 +23,7 @@ namespace EtatCovid
             Random rand = new Random();
             bool resultat = rand.NextDouble() > 0.5;
 
+            EnregistrementLabo.EnregistrerTest(DateTime.Now, citoyen.cin, resultat, this.nom);
             DonnerLeResultat(resultat, citoyen);
         }
 
