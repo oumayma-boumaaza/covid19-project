@@ -45,7 +45,7 @@ namespace EtatCovid
         }
         public void SeConfiner(DateTime debut, DateTime fin)
         {
-            
+                
         }
     }
 }   

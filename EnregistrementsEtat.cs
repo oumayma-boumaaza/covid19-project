@@ -7,12 +7,19 @@ namespace EtatCovid
 {
    public class EnregistrementsEtat
     {
+        public static List<EnregistrementsEtat> Etats = new List<EnregistrementsEtat>();
         public DateTime DateEtat;
         public string CinCitoyen;
-    public EnregistrementsEtat(DateTime date,string cin)
+        public  Etat etat;
+    public EnregistrementsEtat(DateTime date,string cin,Etat Etat)
         {
             DateEtat = date;
             CinCitoyen = cin;
+            etat = Etat;
+        }
+    public static void EnregistrerLesEtats(DateTime date, string cin,Etat Etat)
+        {
+           Etats.Add(new EnregistrementsEtat(DateTime.Now, cin, Etat));
         }
     }
 }

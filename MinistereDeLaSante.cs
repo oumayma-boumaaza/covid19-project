@@ -13,6 +13,7 @@ namespace EtatCovid
         public static void ModifierL_etat(Citoyen citoyen, Etat etat)
         {
             citoyen.etat = etat;
+
         }
     }
 }

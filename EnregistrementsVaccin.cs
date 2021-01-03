@@ -11,7 +11,7 @@ namespace EtatCovid
 {
     public class EnregistrementsVaccin
     {
-        public static List<EnregistrementsVaccin> Testes = new List<EnregistrementsVaccin>();
+        public static List<EnregistrementsVaccin> Vaccins = new List<EnregistrementsVaccin>();
         public DateTime DateVacc;
         public string CinCitoyen;
         public EnregistrementsVaccin(DateTime date,string cin)
@@ -21,7 +21,7 @@ namespace EtatCovid
         }
         public static void EnregistrerVaccin(DateTime date,string cin)
         {
-            Testes.Add(new EnregistrementsVaccin(date,cin));
+            Vaccins.Add(new EnregistrementsVaccin(date,cin));
         }
 
     }
