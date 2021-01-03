@@ -5,19 +5,27 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.Generic;
+
 namespace EtatCovid
 {
+    
     public class Confinement
     {
+        public static List<Confinement> Confinements = new List<Confinement>();
         public DateTime DateDebut;
         public DateTime DateFin;
+        public string CinCitoyen;
 
-    public Confinement(DateTime debut,DateTime fin)
+    public Confinement(DateTime debut,DateTime fin,string cin)
         {
             DateDebut = debut;
             DateFin = fin;
         }
-
+    public static void EnregistrerConfinements(DateTime debut,DateTime fin,string cin)
+        {
+            Confinements.Add(new Confinement(debut, fin,cin));
+        }
     }
 
 }

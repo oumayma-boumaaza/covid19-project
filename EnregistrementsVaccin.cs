@@ -23,6 +23,5 @@ namespace EtatCovid
         {
             Vaccins.Add(new EnregistrementsVaccin(date,cin));
         }
-
     }
 }

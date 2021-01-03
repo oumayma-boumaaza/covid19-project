@@ -108,7 +108,7 @@
     <Compile Include="MinistereDeLaSante.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rencontre.cs" />
+    <Compile Include="EnregistrementsRencontres.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
