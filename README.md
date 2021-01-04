@@ -6,7 +6,7 @@ ___
 ___
 ## Diagramme de classe:
 
-![alt text](https://github.com/oumayma-boumaaza/covid19-project/blob/main/images/DC.etats%20covid.png)
+![Diagramme de class](https://github.com/oumayma-boumaaza/covid19-project/blob/main/images/DC.jpg )
 ___
 ## Diagramme d'etat de transition:
 ![alt text](https://github.com/oumayma-boumaaza/covid19-project/blob/main/images/Diagramme%20d'etat%20de%20transition%20Covid19.jpg)
