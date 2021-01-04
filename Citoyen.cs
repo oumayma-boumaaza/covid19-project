@@ -27,13 +27,13 @@ namespace EtatCovid
         public DateTime dateDeNaissaance { get; set; }
         public Etat etat { get; set; }
 
-        public Citoyen(string lastName, string firstName, string Cin, DateTime DateDeNaissance)
+        public Citoyen(string lastName, string firstName, string Cin, DateTime DateDeNaissance, Etat state)
         {
             last = lastName;
             first = firstName;
             cin = Cin;
             dateDeNaissaance = DateDeNaissance;
-            etat = Etat.Inexplore;
+            etat = state;
             
         }
 
