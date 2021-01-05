@@ -9,7 +9,9 @@ namespace ConsoleApp
     class Program
     {
         private static List<Citoyen> citoyens = new List<Citoyen>();
-        
+      private static  List<Labo> labos = new List<Labo>();
+      private static List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
+
         static void Main(string[] args)
         {
 
@@ -35,16 +37,44 @@ namespace ConsoleApp
 
                         }
                         getCitoyenInfo(cin);
-
+                        Console.Write("le citoyen a été bien ajouté \n");
                         break;
 
                     case 1:
+                        //Ajouter un laboratoire
+                        Console.Write("Donner le nom du loboratoire: ");
+                        string nomLabo = Console.ReadLine();
+                        for (int i = 0; i < labos.Count(); i++)
+                        {
+                            if (labos[i].nom.Equals(nomLabo))
+                            {
+                                Console.WriteLine("le nom du labo existe deja!");
+                                continue;
+                            }
 
+                        }
+                        labos.Add(new Labo(nomLabo));
+                        Console.Write("le laboratoire a été bien ajouté \n");
                         break;
                     case 2:
+                        //Ajouter un centre de vaccination
+                        Console.Write("Donner le nom du centre de vaccination: ");
+                        string nomCentre = Console.ReadLine();
+                        for (int i = 0; i < centreDeVaccinations.Count(); i++)
+                        {
+                            if (centreDeVaccinations[i].nomCentre.Equals(nomCentre))
+                            {
+                                Console.WriteLine("le nom du centre existe deja!");
+                                continue;
+                            }
+
+                        }
+                        centreDeVaccinations.Add(new CentreDeVaccination(nomCentre));
+                        Console.Write("le centre de vaccination a été bien ajouté \n");
 
                         break;
                     case 3:
+                        //Afficher la liste des citoyens
 
                         break;
                     case 4:
@@ -63,6 +93,9 @@ namespace ConsoleApp
                         return
                         ;
                         break;
+                    default:
+                        Console.WriteLine("Il n'existe aucune operation portant le numero : " + " ' "+ choix + " ' ");
+                        break;
                 }
             }
             while (true);
@@ -76,9 +109,11 @@ namespace ConsoleApp
 
                 Console.WriteLine(" >>>App Covid19\n");
                 Console.WriteLine("0 : Ajouter un citoyen");
-                Console.WriteLine("1 : Afficher la liste des citoyens");
-                Console.WriteLine("2 : Selectionner un citoyen");
-                Console.WriteLine("4 : Tester un Citoyen");
+                Console.WriteLine("1 : Ajouter un laboratoire");
+                Console.WriteLine("2 : Ajouter un centre de vaccination");
+                Console.WriteLine("3 : Afficher la liste des citoyens");
+                Console.WriteLine("4 : Selectionner un citoyen");
+                Console.WriteLine("5 : Tester un Citoyen");
                 Console.WriteLine("6 : Se faire vacciner un citoyen");
                 Console.WriteLine("7 : Contacter deux citoyen");
                 Console.WriteLine("8 : Quitter");
@@ -129,7 +164,10 @@ namespace ConsoleApp
                     break;
             }
         }
+        public static void addLabo()
+        {
 
+        }
 
     }
 }

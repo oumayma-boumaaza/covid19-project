@@ -11,7 +11,7 @@ using System.Text;
 
 namespace EtatCovid
 {
-    class CentreDeVaccination
+  public  class CentreDeVaccination
     {
         public string nomCentre
         {
