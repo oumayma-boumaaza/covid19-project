@@ -22,6 +22,7 @@ namespace EtatCovid
             return $"Le Laboratoire : {this.nom}";
             
         }
+        //donne une resultat aletoire entre 0 et 1 en supposant superieur que 0,5 .
         public  bool TesterLeCitoyen(Citoyen citoyen)
         {
             Random rand = new Random();

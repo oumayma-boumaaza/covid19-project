@@ -112,11 +112,19 @@ namespace ConsoleApp
                         VaccinerCit();
                         break;
                     case 9:
-                        ;
+                        //contacter
+                        Contacter();
                         break;
                     case 10:
+                        //confiner
+                        Confiner();
+
+
+                        break;
+                    case 11:
                         Console.WriteLine("VOUS AVEZ QUITTÉ");
                         return;
+
                     default:
                         Console.WriteLine("Il n'existe aucune operation portant le numero : " + " ' " + choix + " ' ");
                         break;
@@ -143,7 +151,8 @@ namespace ConsoleApp
                 Console.WriteLine("7 : Tester un Citoyen");
                 Console.WriteLine("8 : Vacciner un citoyen");
                 Console.WriteLine("9 : Contacter deux citoyens");
-                Console.WriteLine("10 : Quitter");
+                Console.WriteLine("10: Confiner un citoyen");
+                Console.WriteLine("11 : Quitter");
                 Console.Write("\n>>> Veuillez Choisir!! : ");
 
 
@@ -153,7 +162,7 @@ namespace ConsoleApp
                 {
                     Console.WriteLine("choix non valid");
                 }
-            } while (((choix > 10) && (choix < 0)) || (!choixvalid));
+            } while (((choix > 11) && (choix < 0)) || (!choixvalid));
             return choix;
         }
 
@@ -349,6 +358,20 @@ namespace ConsoleApp
 
 
 
+        }
+        public static void Confiner()
+        {
+            Console.Write("Entrez le CIN: ");
+            string cin = Console.ReadLine().Trim().ToUpper();
+            for (int i = 0; i < citoyens.Count; i++)
+            {
+                if (citoyens[i].cin.Equals(cin))
+                {
+                    citoyens[i].SeConfiner(DateTime.Now); 
+                }
+                Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+                return;
+            }
         }
     }
 }

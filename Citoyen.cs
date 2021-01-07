@@ -57,7 +57,7 @@ namespace EtatCovid
             return $"Le citoyen {this.first}  {this.last} né le {this.dateDeNaissaance.ToShortDateString()} Comportant le numero du cin {this.cin} .Il est {etat} ";
         }
 
-        public void SeConfiner(DateTime debut, DateTime fin)
+        public void SeConfiner(DateTime debut)
         {
             Timer timer1 = new Timer();
 
@@ -70,7 +70,7 @@ namespace EtatCovid
             void EnregistrerConfinement(object sender, EventArgs e)
             {
                 timer1.Stop();
-                Confinement.EnregistrerConfinements(debut, fin,cin);
+                Confinement.EnregistrerConfinements(debut, DateTime.Now ,cin);
             }
         }
 
