@@ -17,7 +17,11 @@ namespace EtatCovid
         {
             nom = Nom;
         }
-
+        public string getInfoLabo()
+        {
+            return $"Le Laboratoire : {this.nom}";
+            
+        }
         public  bool TesterLeCitoyen(Citoyen citoyen)
         {
             Random rand = new Random();

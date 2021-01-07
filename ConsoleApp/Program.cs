@@ -91,22 +91,30 @@ namespace ConsoleApp
                         ListerCitoyens();
                         break;
                     case 4:
+                        //Afficher la liste des labo
+                        Listerlabos();
+                        break;
+                    case 5:
+                        //Afficher la liste des centres
+                        ListerCentres();
+                        break;
+                    case 6:
                         //Consulter l'etat d'un citoyen
                         ChercherCitoyen();
                         break;
-                    case 5:
+                    case 7:
                         //tester un citoyen
                         TesterCit();
 
                         break;
-                    case 6:
+                    case 8:
                         //vacciner un citoyen
                         VaccinerCit();
                         break;
-                    case 7:
+                    case 9:
                         ;
                         break;
-                    case 8:
+                    case 10:
                         Console.WriteLine("VOUS AVEZ QUITTÉ");
                         return;
                     default:
@@ -129,11 +137,13 @@ namespace ConsoleApp
                 Console.WriteLine("1 : Ajouter un laboratoire");
                 Console.WriteLine("2 : Ajouter un centre de vaccination");
                 Console.WriteLine("3 : Afficher la liste des citoyens");
-                Console.WriteLine("4 : Consulter l'état d'un citoyen");
-                Console.WriteLine("5 : Tester un Citoyen");
-                Console.WriteLine("6 : Vacciner un citoyen");
-                Console.WriteLine("7 : Contacter deux citoyens");
-                Console.WriteLine("8 : Quitter");
+                Console.WriteLine("4 : Afficher la liste des Laboratoire");
+                Console.WriteLine("5 : Afficher la liste des centres de vaccination");
+                Console.WriteLine("6 : Consulter l'état d'un citoyen");
+                Console.WriteLine("7 : Tester un Citoyen");
+                Console.WriteLine("8 : Vacciner un citoyen");
+                Console.WriteLine("9 : Contacter deux citoyens");
+                Console.WriteLine("10 : Quitter");
                 Console.Write("\n>>> Veuillez Choisir!! : ");
 
 
@@ -143,7 +153,7 @@ namespace ConsoleApp
                 {
                     Console.WriteLine("choix non valid");
                 }
-            } while (((choix > 8) && (choix < 0)) || (!choixvalid));
+            } while (((choix > 10) && (choix < 0)) || (!choixvalid));
             return choix;
         }
 
@@ -195,6 +205,34 @@ namespace ConsoleApp
                 for (int i = 0; i < citoyens.Count; i++)
                 {
                     Console.WriteLine(citoyens[i].GetInformation());
+                }
+            }
+        }
+        public static void Listerlabos()
+        {
+            if (labos.Count == 0)
+            {
+                Console.WriteLine("Il y a aucun laboratoire!");
+            }
+            else
+            {
+                for (int i = 0; i < labos.Count; i++)
+                {
+                    Console.WriteLine(labos[i].getInfoLabo());
+                }
+            }
+        }
+        public static void ListerCentres()
+        {
+            if (centreDeVaccinations.Count == 0)
+            {
+                Console.WriteLine("Il y a aucun Centre de vacination!");
+            }
+            else
+            {
+                for (int i = 0; i < centreDeVaccinations.Count; i++)
+                {
+                    Console.WriteLine(centreDeVaccinations[i].getInfoCentre());
                 }
             }
         }

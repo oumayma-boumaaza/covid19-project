@@ -21,6 +21,10 @@ namespace EtatCovid
         {
             nomCentre = NomCentre;
         }
+        public string getInfoCentre()
+        {
+            return $"Le centre de vaccination : {this.nomCentre}";
+;        }
         public  void Vacciner(Citoyen citoyen)
         {
             EnregistrementsVaccin.EnregistrerVaccin(DateTime.Now, citoyen.cin);
