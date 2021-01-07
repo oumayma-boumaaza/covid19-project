@@ -39,7 +39,7 @@ namespace ConsoleApp
                         {
                             getCitoyenInfo(cin);
                             Console.Write("le citoyen a été bien ajouté \n");
-                            
+
                         }
                         break;
                     case 1:
@@ -97,10 +97,11 @@ namespace ConsoleApp
                     case 5:
                         //tester un citoyen
                         TesterCit();
-                        
+
                         break;
                     case 6:
-                        ;
+                        //vacciner un citoyen
+                        VaccinerCit();
                         break;
                     case 7:
                         ;
@@ -137,12 +138,12 @@ namespace ConsoleApp
 
 
                 string c = Console.ReadLine();
-             choixvalid = int.TryParse(c,out choix);
+                choixvalid = int.TryParse(c, out choix);
                 if (!choixvalid)
                 {
                     Console.WriteLine("choix non valid");
                 }
-            } while (((choix > 8) && (choix < 0)) ||( !choixvalid));
+            } while (((choix > 8) && (choix < 0)) || (!choixvalid));
             return choix;
         }
 
@@ -185,7 +186,7 @@ namespace ConsoleApp
         }
         public static void ListerCitoyens()
         {
-            if (citoyens.Count==0)
+            if (citoyens.Count == 0)
             {
                 Console.WriteLine("Il y a aucun citoyen!");
             }
@@ -193,7 +194,7 @@ namespace ConsoleApp
             {
                 for (int i = 0; i < citoyens.Count; i++)
                 {
-                    Console.WriteLine( citoyens[i].GetInformation() ); 
+                    Console.WriteLine(citoyens[i].GetInformation());
                 }
             }
         }
@@ -225,7 +226,7 @@ namespace ConsoleApp
                     {
                         if (citoyens[index].cin.Equals(cin))
                         {
-                        bool testresult=labos[i].TesterLeCitoyen(citoyens[index]);
+                            bool testresult = labos[i].TesterLeCitoyen(citoyens[index]);
                             if (testresult)
                             {
                                 Console.WriteLine("Le Test est Positif");
@@ -233,7 +234,7 @@ namespace ConsoleApp
                             else
                             {
                                 Console.WriteLine("Le Test est Négatif");
-                                
+
                             }
                             return;
                         }
@@ -241,10 +242,41 @@ namespace ConsoleApp
                     Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
                     return;
                 }
-                
+
             }
-            
+
             Console.WriteLine("Il n'existe aucun laboratoire avec ce nom");
+        }
+        public static void VaccinerCit()
+        {
+            Console.Write("Citez Le nom du Centre De Vaccination: ");
+            string nomCentre = Console.ReadLine().Trim().ToUpper();
+            for (int i = 0; i < centreDeVaccinations.Count; i++)
+            {
+                if (centreDeVaccinations[i].nomCentre.Equals(nomCentre))
+                {
+                    Console.Write("Entrez le CIN du citoyen : ");
+                    string cin = Console.ReadLine().Trim().ToUpper();
+                    for (int index = 0; index < citoyens.Count; index++)
+                    {
+                        if (citoyens[index].cin.Equals(cin))
+                        {
+
+                        centreDeVaccinations[i].Vacciner(citoyens[index]);
+
+                            Console.WriteLine("Le citoyen est vacciné"); 
+                            return;
+
+                        }
+                    }
+                    Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+                    return;
+                }
+
+            }
+
+            Console.WriteLine("Il n'existe aucun Centre de vaccination avec ce nom");
+
         }
     }
 }

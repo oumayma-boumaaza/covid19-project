@@ -30,13 +30,11 @@ namespace EtatCovid
         {
             if (Resultat)
             {
-                MinistereDeLaSante.ModifierL_etat(cit, Etat.PorteurDeVirus);
-                
+                MinistereDeLaSante.ModifierL_etat(cit, Etat.PorteurDeVirus);     
             }
             else
             {
-                MinistereDeLaSante.ModifierL_etat(cit, Etat.Sain);
-                
+                MinistereDeLaSante.ModifierL_etat(cit, Etat.Sain);    
             }
 
         }
