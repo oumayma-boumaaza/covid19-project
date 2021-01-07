@@ -300,9 +300,9 @@ namespace ConsoleApp
                         if (citoyens[index].cin.Equals(cin))
                         {
 
-                        centreDeVaccinations[i].Vacciner(citoyens[index]);
+                            centreDeVaccinations[i].Vacciner(citoyens[index]);
 
-                            Console.WriteLine("Le citoyen est vacciné"); 
+                            Console.WriteLine("Le citoyen est vacciné");
                             return;
 
                         }
@@ -314,6 +314,40 @@ namespace ConsoleApp
             }
 
             Console.WriteLine("Il n'existe aucun Centre de vaccination avec ce nom");
+
+        }
+        public static void Contacter()
+        {
+            Console.WriteLine("Saisir le cin du premier citoyen: ");
+            string cin1 = Console.ReadLine().Trim().ToUpper();
+            for (int i = 0; i < citoyens.Count; i++)
+            {
+                if (citoyens[i].cin.Equals(cin1))
+                {
+                    Console.WriteLine("Saisir le cin du deuxieme citoyen: ");
+                    string cin2 = Console.ReadLine().Trim().ToUpper();
+                    for (int index = 0; index < citoyens.Count; index++)
+                    {
+                        if (citoyens[i].cin.Equals(cin2))
+                        {
+                            EnregistrementsRencontres.EnregistrerRncontres(DateTime.Now, cin1, cin2);
+                            Console.WriteLine("Contact Effectué");
+                            return;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+                }
+            }
+
+
 
         }
     }

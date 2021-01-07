@@ -71,7 +71,6 @@ namespace EtatCovid
             {
                 timer1.Stop();
                 Confinement.EnregistrerConfinements(debut, fin,cin);
-
             }
         }
 
