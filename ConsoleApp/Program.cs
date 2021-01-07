@@ -9,79 +9,95 @@ namespace ConsoleApp
     class Program
     {
         private static List<Citoyen> citoyens = new List<Citoyen>();
-      private static  List<Labo> labos = new List<Labo>();
-      private static List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
+        private static List<Labo> labos = new List<Labo>();
+        private static List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
 
         static void Main(string[] args)
         {
 
-            int choix;
-
             do
             {
-                choix = menu();
+                int choix = menu();
 
                 switch (choix)
                 {
-                        case 0:
+                    case 0:
                         //Ajouter un citoyen
-                            Console.Write("Donner le cin du citoyen:");
-                        string cin = Console.ReadLine();
+                        Console.Write("Donner le cin du citoyen:");
+                        string cin = Console.ReadLine().Trim().ToUpper();
+                        bool exist0 = false;
                         for (int i = 0; i < citoyens.Count(); i++)
                         {
                             if (citoyens[i].cin.Equals(cin))
                             {
                                 Console.WriteLine("le cin existe deja!");
-                                continue;
+                                exist0 = true;
+                                break;
                             }
-
                         }
-                        getCitoyenInfo(cin);
-                        Console.Write("le citoyen a été bien ajouté \n");
+                        if (!exist0)
+                        {
+                            getCitoyenInfo(cin);
+                            Console.Write("le citoyen a été bien ajouté \n");
+                            
+                        }
                         break;
-
                     case 1:
                         //Ajouter un laboratoire
                         Console.Write("Donner le nom du loboratoire: ");
-                        string nomLabo = Console.ReadLine();
+                        string nomLabo = Console.ReadLine().Trim().ToUpper();
+                        bool exist1 = false;
                         for (int i = 0; i < labos.Count(); i++)
                         {
                             if (labos[i].nom.Equals(nomLabo))
                             {
                                 Console.WriteLine("le nom du labo existe deja!");
-                                continue;
+                                exist1 = true;
+                                break;
                             }
 
                         }
-                        labos.Add(new Labo(nomLabo));
-                        Console.Write("le laboratoire a été bien ajouté \n");
+                        if (!exist1)
+                        {
+                            labos.Add(new Labo(nomLabo));
+                            Console.Write("le laboratoire a été bien ajouté \n");
+                        }
                         break;
+
                     case 2:
                         //Ajouter un centre de vaccination
                         Console.Write("Donner le nom du centre de vaccination: ");
-                        string nomCentre = Console.ReadLine();
+                        string nomCentre = Console.ReadLine().Trim().ToUpper();
+                        bool exist2 = false;
                         for (int i = 0; i < centreDeVaccinations.Count(); i++)
                         {
                             if (centreDeVaccinations[i].nomCentre.Equals(nomCentre))
                             {
                                 Console.WriteLine("le nom du centre existe deja!");
-                                continue;
-                            }
+                                exist2 = true;
+                                break;
 
+                            }
                         }
-                        centreDeVaccinations.Add(new CentreDeVaccination(nomCentre));
-                        Console.Write("le centre de vaccination a été bien ajouté \n");
+                        if (!exist2)
+                        {
+                            centreDeVaccinations.Add(new CentreDeVaccination(nomCentre));
+                            Console.Write("le centre de vaccination a été bien ajouté \n");
+                        }
 
                         break;
                     case 3:
                         //Afficher la liste des citoyens
-
+                        ListerCitoyens();
                         break;
                     case 4:
-
+                        //Consulter l'etat d'un citoyen
+                        ChercherCitoyen();
                         break;
                     case 5:
-                        ;
+                        //tester un citoyen
+                        TesterCit();
+                        
                         break;
                     case 6:
                         ;
@@ -90,19 +106,19 @@ namespace ConsoleApp
                         ;
                         break;
                     case 8:
-                        return
-                        ;
-                        break;
+                        Console.WriteLine("VOUS AVEZ QUITTÉ");
+                        return;
                     default:
-                        Console.WriteLine("Il n'existe aucune operation portant le numero : " + " ' "+ choix + " ' ");
+                        Console.WriteLine("Il n'existe aucune operation portant le numero : " + " ' " + choix + " ' ");
                         break;
                 }
             }
             while (true);
         }
-        
+
         public static int menu()
         {
+            bool choixvalid;
             int choix;
             do
             {
@@ -112,21 +128,24 @@ namespace ConsoleApp
                 Console.WriteLine("1 : Ajouter un laboratoire");
                 Console.WriteLine("2 : Ajouter un centre de vaccination");
                 Console.WriteLine("3 : Afficher la liste des citoyens");
-                Console.WriteLine("4 : Selectionner un citoyen");
+                Console.WriteLine("4 : Consulter l'état d'un citoyen");
                 Console.WriteLine("5 : Tester un Citoyen");
-                Console.WriteLine("6 : Se faire vacciner un citoyen");
-                Console.WriteLine("7 : Contacter deux citoyen");
+                Console.WriteLine("6 : Vacciner un citoyen");
+                Console.WriteLine("7 : Contacter deux citoyens");
                 Console.WriteLine("8 : Quitter");
                 Console.Write("\n>>> Veuillez Choisir!! : ");
 
 
                 string c = Console.ReadLine();
-                choix = int.Parse(c);
-
-            } while ((choix > 8) && (choix < 0));
+             choixvalid = int.TryParse(c,out choix);
+                if (!choixvalid)
+                {
+                    Console.WriteLine("choix non valid");
+                }
+            } while (((choix > 8) && (choix < 0)) ||( !choixvalid));
             return choix;
         }
-        
+
         public static void getCitoyenInfo(string cin)
         {
             Console.Write("Donner le nom du citoyen:");
@@ -143,7 +162,7 @@ namespace ConsoleApp
             switch (e)
             {
                 case 1:
-                    citoyens.Add(new Citoyen( nom, prenom,cin, dateDeNaissaance, Etat.Symptomatique));
+                    citoyens.Add(new Citoyen(nom, prenom, cin, dateDeNaissaance, Etat.Symptomatique));
                     break;
                 case 2:
                     citoyens.Add(new Citoyen(nom, prenom, cin, dateDeNaissaance, Etat.PorteurDeVirus));
@@ -164,10 +183,68 @@ namespace ConsoleApp
                     break;
             }
         }
-        public static void addLabo()
+        public static void ListerCitoyens()
         {
-
+            if (citoyens.Count==0)
+            {
+                Console.WriteLine("Il y a aucun citoyen!");
+            }
+            else
+            {
+                for (int i = 0; i < citoyens.Count; i++)
+                {
+                    Console.WriteLine( citoyens[i].GetInformation() ); 
+                }
+            }
         }
-
+        public static void ChercherCitoyen()
+        {
+            Console.Write("Entrez le CIN: ");
+            string cin = Console.ReadLine().Trim().ToUpper();
+            for (int i = 0; i < citoyens.Count; i++)
+            {
+                if (citoyens[i].cin.Equals(cin))
+                {
+                    Console.WriteLine(citoyens[i].GetInformation());
+                    return;
+                }
+            }
+            Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+        }
+        public static void TesterCit()
+        {
+            Console.Write("Citez Le nom du Laboratoire: ");
+            string nomlab = Console.ReadLine().Trim().ToUpper();
+            for (int i = 0; i < labos.Count; i++)
+            {
+                if (labos[i].nom.Equals(nomlab))
+                {
+                    Console.Write("Entrez le CIN: ");
+                    string cin = Console.ReadLine().Trim().ToUpper();
+                    for (int index = 0; index < citoyens.Count; index++)
+                    {
+                        if (citoyens[index].cin.Equals(cin))
+                        {
+                        bool testresult=labos[i].TesterLeCitoyen(citoyens[index]);
+                            if (testresult)
+                            {
+                                Console.WriteLine("Le Test est Positif");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Le Test est Négatif");
+                                
+                            }
+                            return;
+                        }
+                    }
+                    Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+                    return;
+                }
+                
+            }
+            
+            Console.WriteLine("Il n'existe aucun laboratoire avec ce nom");
+        }
     }
 }

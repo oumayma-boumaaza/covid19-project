@@ -18,24 +18,25 @@ namespace EtatCovid
             nom = Nom;
         }
 
-        public void TesterLeCitoyen(Citoyen citoyen)
+        public  bool TesterLeCitoyen(Citoyen citoyen)
         {
             Random rand = new Random();
             bool resultat = rand.NextDouble() >= 0.5;
             EnregistrementLabo.EnregistrerTest(DateTime.Now, citoyen.cin, resultat, this.nom);
             DonnerLeResultat(resultat, citoyen);
+            return resultat;
         }
-        public string DonnerLeResultat(bool Resultat, Citoyen cit)
+        public void DonnerLeResultat(bool Resultat, Citoyen cit)
         {
             if (Resultat)
             {
                 MinistereDeLaSante.ModifierL_etat(cit, Etat.PorteurDeVirus);
-                return "Le test est positif";
+                
             }
             else
             {
                 MinistereDeLaSante.ModifierL_etat(cit, Etat.Sain);
-                return "Le test est negatif";
+                
             }
 
         }

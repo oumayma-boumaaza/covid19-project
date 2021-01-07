@@ -41,7 +41,21 @@ namespace EtatCovid
         {
             EnregistrementsRencontres.EnregistrerRncontres(DateTime.Now, this.cin, citoyen.cin);
         }
-
+        public string GetInformation()
+        {
+            string etat = string.Empty; // ""
+            if (this.etat.Equals(Etat.Sain))
+                etat = "sain";
+            else if (this.etat.Equals(Etat.PorteurDeVirus))
+                etat = "Porteur De Virus";
+            else if (this.etat.Equals(Etat.Inexplore))
+                etat = "Inéxploré";
+            else if (this.etat.Equals(Etat.Symptomatique))
+                etat = "Symptomatique";
+            else if (this.etat.Equals(Etat.Vaccine))
+                etat = "Vacciné";
+            return $"Le citoyen {this.first}  {this.last} né le {this.dateDeNaissaance.ToShortDateString()} Comportant le numero du cin {this.cin} .Il est {etat} ";
+        }
 
         public void SeConfiner(DateTime debut, DateTime fin)
         {
