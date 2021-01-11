@@ -1,4 +1,4 @@
-﻿using EtatCovid;
+﻿using lEtatCovid;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,7 +11,6 @@ namespace ConsoleApp
         private static List<Citoyen> citoyens = new List<Citoyen>();
         private static List<Labo> labos = new List<Labo>();
         private static List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
-
         static void Main(string[] args)
         {
 
@@ -132,14 +131,13 @@ namespace ConsoleApp
             }
             while (true);
         }
-
+  
         public static int menu()
         {
             bool choixvalid;
             int choix;
             do
             {
-
                 Console.WriteLine(" >>>App Covid19\n");
                 Console.WriteLine("0 : Ajouter un citoyen");
                 Console.WriteLine("1 : Ajouter un laboratoire");
