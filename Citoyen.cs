@@ -21,8 +21,8 @@ namespace EtatCovid
 
     public class Citoyen
     {
-        private string last;
-        private string first;
+        public string last;
+        public string first;
         public string cin;
         public DateTime dateDeNaissaance { get; set; }
         public Etat etat { get; set; }
