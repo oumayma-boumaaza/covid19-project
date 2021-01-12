@@ -11,7 +11,8 @@ namespace ConsoleApp
         private static List<Citoyen> citoyens;
         private static List<Labo> labos;
         private static List<CentreDeVaccination> centreDeVaccinations;
-        public Program()
+     
+        static void Main(string[] args)
         {
             try
             {
@@ -24,12 +25,6 @@ namespace ConsoleApp
 
                 Console.WriteLine(ex.Message);
             }
-
-
-        }
-        static void Main(string[] args)
-        {
-
             do
             {
                 int choix = menu();

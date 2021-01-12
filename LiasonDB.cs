@@ -282,14 +282,16 @@ namespace EtatCovid
             return centreDeVaccinations;
         }
         #endregion
-        public static void InsertEnregistrementTest(EnregistrementLabo enregistrementLabo)
-        {
+        public static void InsertEnregistrementTest(DateTime date,string cin,bool result, string nomLabo)
+  {
+
+            int res = result ? 1 : 0;
             try
             {
                 if (cnx.State != ConnectionState.Open)
                     cnx.Open();
                 cmd.Connection = cnx;
-                cmd.CommandText = $"insert into EnregistrementsLabo(DateTest,CinCitoyen,Resultat) values('{enregistrementLabo.DateTest}','{enregistrementLabo.CinCitoyen}','{enregistrementLabo.Resultat}') ";
+                cmd.CommandText = $"insert into EnregistrementsLabo(DateTest,CinCitoyen,Resultat,Labo) values('{date}','{cin}','{res}','{nomLabo}') ";
                 cmd.ExecuteNonQuery();
 
             }

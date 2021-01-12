@@ -28,6 +28,14 @@ namespace EtatCovid
         public static void EnregistrerTest(DateTime date, string cin, bool result,string nomLabo)
         {
             Testes.Add(new EnregistrementLabo(date, cin, result,nomLabo));
+            try
+            {
+                LiasonDB.InsertEnregistrementTest(date,cin,result,nomLabo);
+            }
+            catch (Exception ex)
+            {   
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
