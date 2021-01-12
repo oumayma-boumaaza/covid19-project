@@ -8,9 +8,25 @@ namespace ConsoleApp
 {
     class Program
     {
-        private static List<Citoyen> citoyens = LiasonDB.ListerCitoyens();
-        private static List<Labo> labos = LiasonDB.ListerLabo();
-        private static List<CentreDeVaccination> centreDeVaccinations = LiasonDB.ListerCentre();
+        private static List<Citoyen> citoyens;
+        private static List<Labo> labos;
+        private static List<CentreDeVaccination> centreDeVaccinations;
+        public Program()
+        {
+            try
+            {
+                citoyens = LiasonDB.ListerCitoyens();
+                labos = LiasonDB.ListerLabo();
+                centreDeVaccinations = LiasonDB.ListerCentre();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+
+        }
         static void Main(string[] args)
         {
 
@@ -131,7 +147,7 @@ namespace ConsoleApp
             }
             while (true);
         }
-  
+
         public static int menu()
         {
             bool choixvalid;
@@ -365,7 +381,7 @@ namespace ConsoleApp
             {
                 if (citoyens[i].cin.Equals(cin))
                 {
-                    citoyens[i].SeConfiner(DateTime.Now); 
+                    citoyens[i].SeConfiner(DateTime.Now);
                 }
                 Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
                 return;

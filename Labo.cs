@@ -16,16 +16,26 @@ namespace EtatCovid
         public Labo(string Nom)
         {
             nom = Nom;
-            if (!LiasonDB.LaboExist(this.nom))
-                LiasonDB.InsertLabo(this);
+            try
+            {
+                if (!LiasonDB.LaboExist(this.nom))
+                    LiasonDB.InsertLabo(this);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+
         }
         public string getInfoLabo()
         {
             return $"=> Le Laboratoire : {this.nom}.";
-            
+
         }
         //donne une resultat aletoire entre 0 et 1 en supposant superieur que 0,5 .
-        public  bool TesterLeCitoyen(Citoyen citoyen)
+        public bool TesterLeCitoyen(Citoyen citoyen)
         {
             Random rand = new Random();
             bool resultat = rand.NextDouble() >= 0.5;
@@ -37,11 +47,11 @@ namespace EtatCovid
         {
             if (Resultat)
             {
-                MinistereDeLaSante.ModifierL_etat(cit, Etat.PorteurDeVirus);     
+                MinistereDeLaSante.ModifierL_etat(cit, Etat.PorteurDeVirus);
             }
             else
             {
-                MinistereDeLaSante.ModifierL_etat(cit, Etat.Sain);    
+                MinistereDeLaSante.ModifierL_etat(cit, Etat.Sain);
             }
 
         }
