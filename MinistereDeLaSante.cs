@@ -6,7 +6,6 @@
 
 using System;
 namespace EtatCovid
-
 {
     public static class MinistereDeLaSante
     {
@@ -14,7 +13,6 @@ namespace EtatCovid
         {
             citoyen.Etat = etat;
             EnregistrementsEtat.EnregistrerLesEtats(DateTime.Now, citoyen.cin, etat);
-
         }
     }
 }
