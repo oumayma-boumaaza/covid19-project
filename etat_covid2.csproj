@@ -109,7 +109,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EnregistrementsRencontres.cs" />
-    <Compile Include="persistance\LiasonDB.cs" />
+    <Compile Include="LiasonDB.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

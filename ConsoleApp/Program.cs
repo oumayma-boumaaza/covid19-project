@@ -8,7 +8,7 @@ namespace ConsoleApp
 {
     class Program
     {
-        private static List<Citoyen> citoyens = new List<Citoyen>();
+        private static List<Citoyen> citoyens = LiasonDB.ListerCitoyens();
         private static List<Labo> labos = new List<Labo>();
         private static List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
         static void Main(string[] args)

@@ -24,8 +24,17 @@ namespace EtatCovid
         public string last;
         public string first;
         public string cin;
-        public DateTime dateDeNaissaance { get; set; }
-        public Etat etat { get; set; }
+        public DateTime dateDeNaissaance { get; }
+        private Etat etat;
+        public Etat Etat{
+            get => etat;
+            set
+            {
+                etat = value;
+                LiasonDB.UpdateCitoyen(this);
+            }
+         
+        }
 
         public Citoyen(string lastName, string firstName, string Cin, DateTime DateDeNaissance, Etat state)
         {
@@ -33,8 +42,11 @@ namespace EtatCovid
             first = firstName;
             cin = Cin;
             dateDeNaissaance = DateDeNaissance;
-            etat = state;
+            Etat = state;
+            if(!LiasonDB.CitoyenExist(this.cin))
+            LiasonDB.InsertCitoyen(this);
             
+
         }
 
         public void Contacter(Citoyen citoyen)
@@ -54,7 +66,7 @@ namespace EtatCovid
                 etat = "Symptomatique";
             else if (this.etat.Equals(Etat.Vaccine))
                 etat = "Vacciné";
-            return $"Le citoyen {this.first}  {this.last} né le {this.dateDeNaissaance.ToShortDateString()} Comportant le numero du cin {this.cin} .Il est {etat} ";
+            return $"=> Le citoyen: {this.first}  {this.last} né le {this.dateDeNaissaance.ToShortDateString()} Comportant le numéro du cin {this.cin} .Il est {etat}.";    
         }
 
         public void SeConfiner(DateTime debut)
