@@ -14,6 +14,7 @@ namespace EtatCovid
         {
             citoyen.Etat = etat;
             EnregistrementsEtat.EnregistrerLesEtats(DateTime.Now, citoyen.cin, etat);
+
         }
     }
 }

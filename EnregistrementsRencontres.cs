@@ -21,6 +21,14 @@ namespace EtatCovid
         public static void EnregistrerRncontres(DateTime date,string cin1,string cin2)
         {
             rencontre.Add(new EnregistrementsRencontres(DateTime.Now, cin1, cin2));
+            try
+            {
+                LiasonDB.InsertEnregistrementRencontre(date, cin1,cin2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

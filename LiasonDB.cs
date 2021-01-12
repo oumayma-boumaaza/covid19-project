@@ -282,6 +282,7 @@ namespace EtatCovid
             return centreDeVaccinations;
         }
         #endregion
+        #region enreglaboratoire
         public static void InsertEnregistrementTest(DateTime date,string cin,bool result, string nomLabo)
   {
 
@@ -307,14 +308,16 @@ namespace EtatCovid
             }
 
         }
-        public static void InsertEnregistrementVaccins(EnregistrementsVaccin enregistrementsVaccin)
+        #endregion
+        #region enregvaccins
+        public static void InsertEnregistrementVaccins(DateTime date, string cin, string centreDeVaccination)
         {
             try
             {
                 if (cnx.State != ConnectionState.Open)
                     cnx.Open();
                 cmd.Connection = cnx;
-                cmd.CommandText = $"insert into EnregistrementsVaccins(DateVacc,CinCitoyen) values('{enregistrementsVaccin.DateVacc}','{enregistrementsVaccin.CinCitoyen}') ";
+                cmd.CommandText = $"insert into EnregistrementsVaccins(DateVacc,CinCitoyen,CentreDeVaccination) values('{date}','{cin}','{centreDeVaccination}') ";
                 cmd.ExecuteNonQuery();
 
             }
@@ -330,14 +333,16 @@ namespace EtatCovid
             }
 
         }
-        public static void InsertEnregistrementRencontre(EnregistrementsRencontres enregistrementsRencontres)
+        #endregion
+        #region enregRencontres
+        public static void InsertEnregistrementRencontre(DateTime date, string cin1, string cin2)
         {
             try
             {
                 if (cnx.State != ConnectionState.Open)
                     cnx.Open();
                 cmd.Connection = cnx;
-                cmd.CommandText = $"insert into EnregistrementsRencontres(DateRencontre,CinCitoyen1,CinCitoyen2) values('{enregistrementsRencontres.DateRoncontre}','{enregistrementsRencontres.CinCitoyen1}','{enregistrementsRencontres.CinCitoyen2}') ";
+                cmd.CommandText = $"insert into EnregistrementsRencontres(DateRencontre,CinCitoyen1,CinCitoyen2) values('{date}','{cin1}','{cin2}') ";
                 cmd.ExecuteNonQuery();
 
             }
@@ -353,14 +358,16 @@ namespace EtatCovid
             }
 
         }
-        public static void InsertEnregistrementEtat(EnregistrementsEtat enregistrementsEtat)
+        #endregion
+        #region enregEtats
+        public static void InsertEnregistrementEtat(DateTime date, string cin, Etat Etat)
         {
             try
             {
                 if (cnx.State != ConnectionState.Open)
                     cnx.Open();
                 cmd.Connection = cnx;
-                cmd.CommandText = $"insert into EnregistrementsEtats(DateEtat,CinCitoyen,Etat) values('{enregistrementsEtat.DateEtat}','{enregistrementsEtat.CinCitoyen}','{enregistrementsEtat.etat}') ";
+                cmd.CommandText = $"insert into EnregistrementEtats(DateEtat,CinCitoyen,Etat) values('{date}','{cin}','{(int)Etat}')";
                 cmd.ExecuteNonQuery();
 
             }
@@ -376,7 +383,9 @@ namespace EtatCovid
             }
 
         }
-        public static void InsertConfinement(Confinement confinement)
+        #endregion
+        #region confinement
+        public static void InsertConfinement(DateTime debut, DateTime fin, string cin)
         {
             try
             {
@@ -386,7 +395,7 @@ namespace EtatCovid
                 if (cnx.State != ConnectionState.Open)
                     cnx.Open();
                 cmd.Connection = cnx;
-                cmd.CommandText = $"insert into Confinements(DateDebut,DateFin,CinCitoyen) values('{confinement.DateDebut}','{confinement.DateFin}','{confinement.CinCitoyen}') ";
+                cmd.CommandText = $"insert into Confinements(DateDebut,DateFin,CinCitoyen) values('{debut}','{fin}','{cin}') ";
                 cmd.ExecuteNonQuery();
 
             }
@@ -404,3 +413,4 @@ namespace EtatCovid
         }
     }
 }
+#endregion

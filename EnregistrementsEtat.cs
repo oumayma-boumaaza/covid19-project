@@ -20,6 +20,14 @@ namespace EtatCovid
     public static void EnregistrerLesEtats(DateTime date, string cin,Etat Etat)
         {
            Etats.Add(new EnregistrementsEtat(DateTime.Now, cin, Etat));
+            try
+            {
+                LiasonDB.InsertEnregistrementEtat(date, cin, Etat);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

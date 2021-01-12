@@ -10,8 +10,7 @@ namespace ConsoleApp
     {
         private static List<Citoyen> citoyens;
         private static List<Labo> labos;
-        private static List<CentreDeVaccination> centreDeVaccinations;
-     
+        private static List<CentreDeVaccination> centreDeVaccinations; 
         static void Main(string[] args)
         {
             try
@@ -142,7 +141,6 @@ namespace ConsoleApp
             }
             while (true);
         }
-
         public static int menu()
         {
             bool choixvalid;
@@ -174,7 +172,6 @@ namespace ConsoleApp
             } while (((choix > 11) && (choix < 0)) || (!choixvalid));
             return choix;
         }
-
         public static void getCitoyenInfo(string cin)
         {
             Console.Write("Donner le nom du citoyen:");
@@ -337,7 +334,7 @@ namespace ConsoleApp
         public static void Contacter()
         {
             Console.WriteLine("Saisir le cin du premier citoyen: ");
-            string cin1 = Console.ReadLine().Trim().ToUpper();
+                string cin1 = Console.ReadLine().Trim().ToUpper();
             for (int i = 0; i < citoyens.Count; i++)
             {
                 if (citoyens[i].cin.Equals(cin1))
@@ -346,24 +343,21 @@ namespace ConsoleApp
                     string cin2 = Console.ReadLine().Trim().ToUpper();
                     for (int index = 0; index < citoyens.Count; index++)
                     {
-                        if (citoyens[i].cin.Equals(cin2))
+                        if (citoyens[index].cin.Equals(cin2))
                         {
                             EnregistrementsRencontres.EnregistrerRncontres(DateTime.Now, cin1, cin2);
                             Console.WriteLine("Contact Effectué");
                             return;
                         }
-                        else
-                        {
-                            Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
-                            return;
-                        }
                     }
-                }
-                else
-                {
+
                     Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+                    return;
                 }
+                
             }
+            Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+
 
 
 
@@ -377,10 +371,12 @@ namespace ConsoleApp
                 if (citoyens[i].cin.Equals(cin))
                 {
                     citoyens[i].SeConfiner(DateTime.Now);
+                    Console.WriteLine("=> Citoyen Confiné");
+                    return;
                 }
-                Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
+               
+            } Console.WriteLine("Il n'existe aucun citoyen avec ce CIN");
                 return;
-            }
         }
     }
 }

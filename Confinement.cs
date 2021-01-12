@@ -25,6 +25,14 @@ namespace EtatCovid
     public static void EnregistrerConfinements(DateTime debut,DateTime fin,string cin)
         {
             Confinements.Add(new Confinement(debut, fin,cin));
+            try
+            {
+                LiasonDB.InsertConfinement(debut, fin, cin);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 

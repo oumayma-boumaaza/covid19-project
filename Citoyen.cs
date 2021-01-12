@@ -4,7 +4,6 @@
  * Purpose: Definition of the Class Citoyen
  ***********************************************************************/
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace EtatCovid
@@ -26,14 +25,15 @@ namespace EtatCovid
         public string cin;
         public DateTime dateDeNaissaance { get; }
         private Etat etat;
-        public Etat Etat{
+        public Etat Etat
+        {
             get => etat;
             set
             {
                 etat = value;
                 LiasonDB.UpdateCitoyen(this);
             }
-         
+
         }
 
         public Citoyen(string lastName, string firstName, string Cin, DateTime DateDeNaissance, Etat state)
@@ -46,15 +46,19 @@ namespace EtatCovid
             try
             {
                 if (!LiasonDB.CitoyenExist(this.cin))
+                {
                     LiasonDB.InsertCitoyen(this);
+                    LiasonDB.InsertEnregistrementEtat(DateTime.Now, this.cin, this.Etat);
+                }   
+                    
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
             }
-              
-            
+
+
 
         }
 
@@ -75,7 +79,7 @@ namespace EtatCovid
                 etat = "Symptomatique";
             else if (this.etat.Equals(Etat.Vaccine))
                 etat = "Vacciné";
-            return $"=> Le citoyen: {this.first}  {this.last} né le {this.dateDeNaissaance.ToShortDateString()} Comportant le numéro du cin {this.cin} .Il est {etat}.";    
+            return $"=> Le citoyen: {this.first}  {this.last} né le {this.dateDeNaissaance.ToShortDateString()} Comportant le numéro du cin {this.cin} .Il est {etat}.";
         }
 
         public void SeConfiner(DateTime debut)
@@ -91,7 +95,7 @@ namespace EtatCovid
             void EnregistrerConfinement(object sender, EventArgs e)
             {
                 timer1.Stop();
-                Confinement.EnregistrerConfinements(debut, DateTime.Now ,cin);
+                Confinement.EnregistrerConfinements(debut, DateTime.Now, cin);
             }
         }
 

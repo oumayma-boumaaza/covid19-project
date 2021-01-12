@@ -38,7 +38,7 @@ namespace EtatCovid
 ;        }
         public  void Vacciner(Citoyen citoyen)
         {
-            EnregistrementsVaccin.EnregistrerVaccin(DateTime.Now, citoyen.cin);
+            EnregistrementsVaccin.EnregistrerVaccin(DateTime.Now, citoyen.cin,this.nomCentre);
             MinistereDeLaSante.ModifierL_etat(citoyen, Etat.Vaccine);
         }
     }

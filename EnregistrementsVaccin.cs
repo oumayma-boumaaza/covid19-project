@@ -14,14 +14,24 @@ namespace EtatCovid
         public static List<EnregistrementsVaccin> Vaccins = new List<EnregistrementsVaccin>();
         public DateTime DateVacc;
         public string CinCitoyen;
-        public EnregistrementsVaccin(DateTime date,string cin)
+        public string CentreDeVaccination;
+        public EnregistrementsVaccin(DateTime date,string cin,string centreDeVaccination)
         {
             DateVacc = date;
             CinCitoyen = cin;
+            CentreDeVaccination = centreDeVaccination;
         }
-        public static void EnregistrerVaccin(DateTime date,string cin)
+        public static void EnregistrerVaccin(DateTime date,string cin,string centreDeVaccination)
         {
-            Vaccins.Add(new EnregistrementsVaccin(date,cin));
+            Vaccins.Add(new EnregistrementsVaccin(date,cin, centreDeVaccination));
+            try
+            {
+                LiasonDB.InsertEnregistrementVaccins(date, cin, centreDeVaccination);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
