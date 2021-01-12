@@ -20,10 +20,12 @@ namespace EtatCovid
         public CentreDeVaccination(string NomCentre)
         {
             nomCentre = NomCentre;
+            if (!LiasonDB.CentreExist(this.nomCentre))
+                LiasonDB.InsertCentre(this);
         }
         public string getInfoCentre()
         {
-            return $"Le centre de vaccination : {this.nomCentre}";
+            return $"=> Le centre de vaccination : {this.nomCentre}.";
 ;        }
         public  void Vacciner(Citoyen citoyen)
         {

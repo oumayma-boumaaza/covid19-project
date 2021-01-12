@@ -8,13 +8,12 @@ namespace EtatCovid
     public static class LiasonDB
     {
         static string chaine = @"Data Source=DESKTOP-F8JEVTP\SQLDEVELOPPER;Initial Catalog=Covid19;Integrated Security=True";
-        //"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\App_Data\VotreBD.mdf;Integrated Security=True;User Instance=True"
-        //"Server=.\SQLEXPRESS; DataBase=VotreBD;USER ID=sa; PASSWORD="
-         static SqlConnection cnx = new SqlConnection(chaine);
-         static SqlCommand cmd = new SqlCommand();
-        private static  SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-        public static void InsertCitoyen(Citoyen citoyen)       
-        { 
+        static SqlConnection cnx = new SqlConnection(chaine);
+        static SqlCommand cmd = new SqlCommand();
+        private static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        #region  Citoyen
+        public static void InsertCitoyen(Citoyen citoyen)
+        {
             try
             {
                 if (cnx.State != ConnectionState.Open)
@@ -22,7 +21,7 @@ namespace EtatCovid
                 cmd.Connection = cnx;
                 cmd.CommandText = $"insert into Citoyen(CIN, NOM,PRENOM,[DATE DE NAISSANCE],ETAT) values('{citoyen.cin}','{citoyen.last}','{citoyen.first}','{citoyen.dateDeNaissaance.ToShortDateString()}','{(int)citoyen.Etat}') ";
                 cmd.ExecuteNonQuery();
-                
+
             }
             catch (Exception ex)
             {
@@ -32,7 +31,7 @@ namespace EtatCovid
             {
                 if (cnx.State == ConnectionState.Open)
                     cnx.Close();
-                
+
             }
 
         }
@@ -57,13 +56,13 @@ namespace EtatCovid
 
             }
         }
-       public static bool CitoyenExist(string cin)
+        public static bool CitoyenExist(string cin)
         {
             bool resultat;
             try
             {
-                if (cnx.State !=ConnectionState.Open)
-                    cnx.Open(); 
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
                 cmd.Connection = cnx;
                 cmd.CommandText = $"SELECT COUNT(*) FROM Citoyen WHERE CIN='{cin}'";
                 int res = Convert.ToInt32(cmd.ExecuteScalar());
@@ -84,7 +83,6 @@ namespace EtatCovid
             return resultat;
 
         }
-
         public static List<Citoyen> ListerCitoyens()
         {
             List<Citoyen> citoyens = new List<Citoyen>();
@@ -94,7 +92,7 @@ namespace EtatCovid
                     cnx.Open();
                 cmd.Connection = cnx;
                 cmd.CommandText = "SELECT * FROM Citoyen";
-  
+
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 for (int i = 0; i < table.Rows.Count; i++)
@@ -117,6 +115,8 @@ namespace EtatCovid
             }
             return citoyens;
         }
+        #endregion
+        #region Labo
         public static void InsertLabo(Labo labo)
         {
             try
@@ -136,10 +136,70 @@ namespace EtatCovid
             {
                 if (cnx.State == ConnectionState.Open)
                     cnx.Close();
-                
+
             }
 
         }
+        public static bool LaboExist(string nom)
+        {
+            bool resultat;
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"SELECT COUNT(*) FROM Laboratoire WHERE NomLabo='{nom}'";
+                int res = Convert.ToInt32(cmd.ExecuteScalar());
+                if (res == 0)
+                    resultat = false;
+                else
+                    resultat = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+            }
+            return resultat;
+
+        }
+        public static List<Labo> ListerLabo()
+        {
+            List<Labo> labos = new List<Labo>();
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = "SELECT * FROM Laboratoire";
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataRow row = table.Rows[i];
+                    labos.Add(new Labo(row["NomLabo"].ToString()));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+
+            }
+            return labos;
+        }
+        #endregion
+        #region Centre De Vaccination
         public static void InsertCentre(CentreDeVaccination centreDeVaccination)
         {
             try
@@ -163,6 +223,65 @@ namespace EtatCovid
             }
 
         }
+        public static bool CentreExist(string nom)
+        {
+            bool resultat;
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"SELECT COUNT(*) FROM CentreDeVaccination WHERE NomCentre='{nom}'";
+                int res = Convert.ToInt32(cmd.ExecuteScalar());
+                if (res == 0)
+                    resultat = false;
+                else
+                    resultat = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+            }
+            return resultat;
+
+        }
+        public static List<CentreDeVaccination> ListerCentre()
+        {
+            List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = "SELECT * FROM CentreDeVaccination";
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataRow row = table.Rows[i];
+                    centreDeVaccinations.Add(new CentreDeVaccination(row["NomCentre"].ToString()));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+
+            }
+            return centreDeVaccinations;
+        }
+        #endregion
         public static void InsertEnregistrementTest(EnregistrementLabo enregistrementLabo)
         {
             try
@@ -260,10 +379,10 @@ namespace EtatCovid
             try
             {
 
-            
+
 
                 if (cnx.State != ConnectionState.Open)
-                cnx.Open();
+                    cnx.Open();
                 cmd.Connection = cnx;
                 cmd.CommandText = $"insert into Confinements(DateDebut,DateFin,CinCitoyen) values('{confinement.DateDebut}','{confinement.DateFin}','{confinement.CinCitoyen}') ";
                 cmd.ExecuteNonQuery();

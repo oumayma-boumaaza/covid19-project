@@ -44,7 +44,7 @@ namespace EtatCovid
             dateDeNaissaance = DateDeNaissance;
             Etat = state;
             if(!LiasonDB.CitoyenExist(this.cin))
-            LiasonDB.InsertCitoyen(this);
+            LiasonDB.InsertCitoyen(this);   
             
 
         }

@@ -9,8 +9,8 @@ namespace ConsoleApp
     class Program
     {
         private static List<Citoyen> citoyens = LiasonDB.ListerCitoyens();
-        private static List<Labo> labos = new List<Labo>();
-        private static List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
+        private static List<Labo> labos = LiasonDB.ListerLabo();
+        private static List<CentreDeVaccination> centreDeVaccinations = LiasonDB.ListerCentre();
         static void Main(string[] args)
         {
 
@@ -233,7 +233,7 @@ namespace ConsoleApp
         {
             if (centreDeVaccinations.Count == 0)
             {
-                Console.WriteLine("Il y a aucun Centre de vacination!");
+                Console.WriteLine("Il y a aucun Centre de vaccination!");
             }
             else
             {

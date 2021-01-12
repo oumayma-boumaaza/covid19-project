@@ -16,10 +16,12 @@ namespace EtatCovid
         public Labo(string Nom)
         {
             nom = Nom;
+            if (!LiasonDB.LaboExist(this.nom))
+                LiasonDB.InsertLabo(this);
         }
         public string getInfoLabo()
         {
-            return $"Le Laboratoire : {this.nom}";
+            return $"=> Le Laboratoire : {this.nom}.";
             
         }
         //donne une resultat aletoire entre 0 et 1 en supposant superieur que 0,5 .
