@@ -26,5 +26,15 @@ namespace InterfaceGraphique
         {
 
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

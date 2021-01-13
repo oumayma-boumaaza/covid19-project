@@ -121,6 +121,9 @@
   <data name="crowd_group_people_contagion_pandemia_icon_141311" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crowd_group_people_contagion_pandemia_icon_141311.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="down_diagram_dropdown_chart_bars_icon_153857" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down_diagram_dropdown_chart_bars_icon_153857.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Covid191" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Covid191.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,7 +139,7 @@
   <data name="delete_delete_exit_1577" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_delete_exit_1577.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="down_diagram_dropdown_chart_bars_icon_153857" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\down_diagram_dropdown_chart_bars_icon_153857.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background-c19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background-c19.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

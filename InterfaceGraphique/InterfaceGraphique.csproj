@@ -101,5 +101,8 @@
   <ItemGroup>
     <None Include="Resources\down_diagram_dropdown_chart_bars_icon_153857.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-c19.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,6 +63,16 @@ namespace InterfaceGraphique.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_c19 {
+            get {
+                object obj = ResourceManager.GetObject("background-c19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Covid19 {
             get {
                 object obj = ResourceManager.GetObject("Covid19", resourceCulture);
