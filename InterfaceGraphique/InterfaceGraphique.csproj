@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +79,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Covid19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Covid191.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crowd_group_people_contagion_pandemia_icon_141311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test-paper512_44213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\virus_spread_coronavirus_icon_141315.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_delete_exit_1577.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down_diagram_dropdown_chart_bars_icon_153857.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
