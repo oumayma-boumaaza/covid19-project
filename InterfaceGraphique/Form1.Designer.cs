@@ -29,41 +29,38 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button2);
@@ -76,36 +73,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 577);
             this.panel1.TabIndex = 0;
-    
             // 
-            // button5
+            // pictureBox7
             // 
-            this.button5.BackColor = System.Drawing.Color.DarkRed;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Nirmala UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(16, 407);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 45);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "DIAGRAMME";
-            this.button5.UseVisualStyleBackColor = false;
-          
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DarkRed;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Nirmala UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(48, 536);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 41);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "QUITTER";
-            this.button4.UseVisualStyleBackColor = false;
+            this.pictureBox7.Image = global::InterfaceGraphique.Properties.Resources.down_diagram_dropdown_chart_bars_icon_153857;
+            this.pictureBox7.Location = new System.Drawing.Point(57, 429);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(80, 48);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 12;
+            this.pictureBox7.TabStop = false;
             // 
             // button1
             // 
@@ -114,12 +91,22 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(16, 145);
+            this.button1.Location = new System.Drawing.Point(16, 185);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 36);
             this.button1.TabIndex = 7;
             this.button1.Text = "CITOYEN";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::InterfaceGraphique.Properties.Resources.delete_delete_exit_1577;
+            this.pictureBox6.Location = new System.Drawing.Point(819, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(51, 41);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 9;
+            this.pictureBox6.TabStop = false;
             // 
             // button3
             // 
@@ -128,12 +115,26 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Nirmala UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(16, 308);
+            this.button3.Location = new System.Drawing.Point(16, 384);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(155, 39);
             this.button3.TabIndex = 6;
             this.button3.Text = "VACCIN";
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkRed;
+            this.button5.FlatAppearance.BorderSize = 2;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Nirmala UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(16, 483);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(155, 45);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "DIAGRAMME";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -142,7 +143,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Nirmala UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(16, 223);
+            this.button2.Location = new System.Drawing.Point(16, 280);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 37);
             this.button2.TabIndex = 4;
@@ -158,27 +159,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(188, 105);
             this.panel2.TabIndex = 0;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::InterfaceGraphique.Properties.Resources.background_c19;
-            this.pictureBox8.Location = new System.Drawing.Point(192, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(678, 574);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 2;
-            this.pictureBox8.TabStop = false;
-       
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::InterfaceGraphique.Properties.Resources.delete_delete_exit_1577;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 536);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(51, 41);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -202,7 +182,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::InterfaceGraphique.Properties.Resources.crowd_group_people_contagion_pandemia_icon_141311;
-            this.pictureBox3.Location = new System.Drawing.Point(57, 101);
+            this.pictureBox3.Location = new System.Drawing.Point(57, 120);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(80, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -212,7 +192,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::InterfaceGraphique.Properties.Resources.virus_spread_coronavirus_icon_141315;
-            this.pictureBox5.Location = new System.Drawing.Point(57, 256);
+            this.pictureBox5.Location = new System.Drawing.Point(57, 323);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(80, 55);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -222,12 +202,22 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::InterfaceGraphique.Properties.Resources.Test_paper512_44213;
-            this.pictureBox4.Location = new System.Drawing.Point(57, 180);
+            this.pictureBox4.Location = new System.Drawing.Point(57, 227);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(80, 47);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::InterfaceGraphique.Properties.Resources.background_c19;
+            this.pictureBox8.Location = new System.Drawing.Point(192, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(678, 577);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
             // 
             // label1
             // 
@@ -240,16 +230,6 @@
             this.label1.Size = new System.Drawing.Size(302, 93);
             this.label1.TabIndex = 3;
             this.label1.Text = "COVID-19";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::InterfaceGraphique.Properties.Resources.down_diagram_dropdown_chart_bars_icon_153857;
-            this.pictureBox7.Location = new System.Drawing.Point(57, 353);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(80, 48);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 12;
-            this.pictureBox7.TabStop = false;
             // 
             // label2
             // 
@@ -270,6 +250,7 @@
             this.ClientSize = new System.Drawing.Size(870, 577);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,15 +259,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +285,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox8;
