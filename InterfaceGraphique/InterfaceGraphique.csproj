@@ -140,5 +140,38 @@
   <ItemGroup>
     <None Include="Resources\background-c19.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ministere-de-la-sante-maroc-logo-4E2EDBAA10-seeklogo.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-folder-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-test-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-test-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-syringe-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-graph-report-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond-hologramme-coronavirus-realiste_52683-35683.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-xbox-x-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-xbox-x-48 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-x-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-x-24 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

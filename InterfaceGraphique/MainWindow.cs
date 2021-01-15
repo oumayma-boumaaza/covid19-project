@@ -25,34 +25,47 @@ namespace InterfaceGraphique
 
         private void CITOYEN_Click(object sender, EventArgs e)
         {
-            CentreV.Hide();
-            TestV.Hide();
-            DiagramV.Hide();
-            CitoyenV.Show();
+            NameV.Visible = false;
+            HomeV.Visible = false;
+            CentreV.Visible = false;
+            TestV.Visible = false;
+            DiagramV.Visible = false;
+            CitoyenV.Visible = true;
         }
 
         private void Labo_Click(object sender, EventArgs e)
         {
-            CentreV.Hide();
-            TestV.Show();
-            DiagramV.Hide();
-            CitoyenV.Hide();
+            NameV.Visible = false;
+            HomeV.Visible = false;
+            CentreV.Visible = false;
+            TestV.Visible = true;
+            DiagramV.Visible = false;
+            CitoyenV.Visible = false;
         }
 
         private void centre_Click(object sender, EventArgs e)
         {
-            CentreV.Show();
-            TestV.Hide();
-            DiagramV.Hide();
-            CitoyenV.Hide();
+            NameV.Visible = false;
+            HomeV.Visible = false;
+            CentreV.Visible = true;
+            TestV.Visible = false;
+            DiagramV.Visible = false;
+            CitoyenV.Visible = false;
         }
 
         private void etats_Click(object sender, EventArgs e)
         {
-            CentreV.Hide();
-            TestV.Hide();
-            DiagramV.Show();
-            CitoyenV.Hide();
+            NameV.Visible = false;
+            HomeV.Visible = false;
+            CentreV.Visible = false;
+            TestV.Visible = false;
+            DiagramV.Visible = true;
+            CitoyenV.Visible = false;
+        }
+      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
