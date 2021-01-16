@@ -22,6 +22,8 @@ namespace InterfaceGraphique
         {
 
         }
+     
+
 
         private void CITOYEN_Click(object sender, EventArgs e)
         {

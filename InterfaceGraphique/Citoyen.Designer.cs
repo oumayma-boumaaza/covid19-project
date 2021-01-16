@@ -164,7 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Citoyen";
             this.Size = new System.Drawing.Size(629, 528);
-            this.Load += new System.EventHandler(this.Citoyen_Load_1);
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 

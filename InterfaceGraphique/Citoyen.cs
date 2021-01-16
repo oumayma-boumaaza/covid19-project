@@ -17,15 +17,8 @@ namespace InterfaceGraphique
             InitializeComponent();
         }
 
-        private void Citoyen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Citoyen_Load_1(object sender, EventArgs e)
-        {
-
-        }
+    
+       
 
     
     }
