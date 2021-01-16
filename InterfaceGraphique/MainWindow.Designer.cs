@@ -39,13 +39,13 @@
             this.centre = new System.Windows.Forms.Button();
             this.CITOYEN = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.NameV = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.HomeV = new System.Windows.Forms.PictureBox();
             this.DiagramV = new InterfaceGraphique.Diagram();
             this.TestV = new InterfaceGraphique.Labo();
             this.CentreV = new InterfaceGraphique.CentreDeVaccination();
             this.CitoyenV = new InterfaceGraphique.Citoyen();
-            this.NameV = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -187,6 +187,19 @@
             this.panel2.Size = new System.Drawing.Size(728, 590);
             this.panel2.TabIndex = 1;
             // 
+            // NameV
+            // 
+            this.NameV.AutoSize = true;
+            this.NameV.BackColor = System.Drawing.Color.Indigo;
+            this.NameV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameV.Font = new System.Drawing.Font("MV Boli", 20.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NameV.Location = new System.Drawing.Point(6, 488);
+            this.NameV.Name = "NameV";
+            this.NameV.Size = new System.Drawing.Size(361, 39);
+            this.NameV.TabIndex = 6;
+            this.NameV.Text = "OUMAYMA BOUMAAZA";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -247,19 +260,6 @@
             this.CitoyenV.Size = new System.Drawing.Size(728, 590);
             this.CitoyenV.TabIndex = 0;
             this.CitoyenV.Visible = false;
-            // 
-            // NameV
-            // 
-            this.NameV.AutoSize = true;
-            this.NameV.BackColor = System.Drawing.Color.Indigo;
-            this.NameV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameV.Font = new System.Drawing.Font("MV Boli", 20.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameV.Location = new System.Drawing.Point(6, 488);
-            this.NameV.Name = "NameV";
-            this.NameV.Size = new System.Drawing.Size(361, 39);
-            this.NameV.TabIndex = 6;
-            this.NameV.Text = "OUMAYMA BOUMAAZA";
             // 
             // MainWindow
             // 

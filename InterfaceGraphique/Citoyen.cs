@@ -21,5 +21,12 @@ namespace InterfaceGraphique
         {
 
         }
+
+        private void Citoyen_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }

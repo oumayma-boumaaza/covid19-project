@@ -173,5 +173,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-x-24 %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-coronavirus-24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
