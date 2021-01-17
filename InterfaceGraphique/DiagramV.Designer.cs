@@ -1,6 +1,6 @@
 ﻿namespace InterfaceGraphique
 {
-    partial class Diagram
+    partial class DiagramV
     {
         /// <summary> 
         /// Required designer variable.

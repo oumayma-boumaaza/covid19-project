@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterfaceGraphique
 {
-    public partial class Diagram : UserControl
+    public partial class DiagramV : UserControl
     {
-        public Diagram()
+        public DiagramV()
         {
             InitializeComponent();
         }

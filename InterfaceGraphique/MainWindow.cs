@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EtatCovid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace InterfaceGraphique
 {
     public partial class MainWindow : Form
     {
+        public List<Citoyen> citoyens;
         public MainWindow()
         {
             InitializeComponent();
@@ -20,7 +22,6 @@ namespace InterfaceGraphique
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-
         }
      
 

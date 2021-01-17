@@ -11,6 +11,7 @@ namespace EtatCovid
         static SqlConnection cnx = new SqlConnection(chaine);
         static SqlCommand cmd = new SqlCommand();
         private static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        public static List<Citoyen> citoyens;
         #region  Citoyen
         public static void InsertCitoyen(Citoyen citoyen)
         {
@@ -85,7 +86,11 @@ namespace EtatCovid
         }
         public static List<Citoyen> ListerCitoyens()
         {
-            List<Citoyen> citoyens = new List<Citoyen>();
+            if(citoyens != null)
+            {
+                return citoyens;
+            }
+            citoyens = new List<Citoyen>();
             try
             {
                 if (cnx.State != ConnectionState.Open)

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace InterfaceGraphique
 {
-    public partial class Citoyen : UserControl
+    public partial class LaboV : UserControl
     {
-        public Citoyen()
+        public LaboV()
         {
             InitializeComponent();
         }
-
-    
-       
-
-    
     }
 }

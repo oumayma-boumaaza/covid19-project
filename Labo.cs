@@ -26,8 +26,6 @@ namespace EtatCovid
 
                 Console.WriteLine(ex.Message);
             }
-
-
         }
         public string getInfoLabo()
         {

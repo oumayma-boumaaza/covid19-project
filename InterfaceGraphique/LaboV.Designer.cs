@@ -1,6 +1,6 @@
 ﻿namespace InterfaceGraphique
 {
-    partial class Labo
+    partial class LaboV
     {
         /// <summary> 
         /// Required designer variable.
