@@ -11,6 +11,7 @@ namespace InterfaceGraphique
     {
         List<Citoyen> citoyens;
         List<Labo> labos;
+        
         public LaboV()
         {
             InitializeComponent();
@@ -51,5 +52,6 @@ namespace InterfaceGraphique
             }
 
         }
+    
     }
 }
