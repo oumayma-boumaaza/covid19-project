@@ -12,6 +12,7 @@ namespace EtatCovid
         static SqlCommand cmd = new SqlCommand();
         private static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
         public static List<Citoyen> citoyens;
+        public static List<CentreDeVaccination> centres;
         #region  Citoyen
         public static void InsertCitoyen(Citoyen citoyen)
         {
@@ -257,7 +258,9 @@ namespace EtatCovid
         }
         public static List<CentreDeVaccination> ListerCentre()
         {
-            List<CentreDeVaccination> centreDeVaccinations = new List<CentreDeVaccination>();
+            if (centres != null)
+                return centres;
+             centres = new List<CentreDeVaccination>();
             try
             {
                 if (cnx.State != ConnectionState.Open)
@@ -270,7 +273,7 @@ namespace EtatCovid
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     DataRow row = table.Rows[i];
-                    centreDeVaccinations.Add(new CentreDeVaccination(row["NomCentre"].ToString()));
+                    centres.Add(new CentreDeVaccination(row["NomCentre"].ToString()));
 
                 }
             }
@@ -284,7 +287,7 @@ namespace EtatCovid
                     cnx.Close();
 
             }
-            return centreDeVaccinations;
+            return centres;
         }
         #endregion
         #region enreglaboratoire

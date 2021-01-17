@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.citoyenBox = new System.Windows.Forms.ComboBox();
+            this.LaboBox = new System.Windows.Forms.ComboBox();
             this.testerbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -44,25 +44,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "TESTER UN CITOYEN";
             // 
-            // comboBox
+            // citoyenBox
             // 
-            this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(103, 160);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(424, 38);
-            this.comboBox.TabIndex = 2;
-            this.comboBox.Text = "Selectionnez un Citoyen";
+            this.citoyenBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.citoyenBox.FormattingEnabled = true;
+            this.citoyenBox.Location = new System.Drawing.Point(103, 160);
+            this.citoyenBox.Name = "citoyenBox";
+            this.citoyenBox.Size = new System.Drawing.Size(424, 32);
+            this.citoyenBox.TabIndex = 2;
+            this.citoyenBox.Text = "Selectionnez un Citoyen";
             // 
-            // comboBox1
+            // LaboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 246);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(424, 38);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "Selectionnez un Laboratoire";
+            this.LaboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaboBox.FormattingEnabled = true;
+            this.LaboBox.Location = new System.Drawing.Point(103, 246);
+            this.LaboBox.Name = "LaboBox";
+            this.LaboBox.Size = new System.Drawing.Size(424, 32);
+            this.LaboBox.TabIndex = 3;
+            this.LaboBox.Text = "Selectionnez un Laboratoire";
             // 
             // testerbtn
             // 
@@ -74,17 +74,18 @@
             this.testerbtn.TabIndex = 4;
             this.testerbtn.Text = "Tester";
             this.testerbtn.UseVisualStyleBackColor = false;
+            this.testerbtn.Click += new System.EventHandler(this.testerbtn_Click);
             // 
-            // Labo
+            // LaboV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(134)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.testerbtn);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.comboBox);
+            this.Controls.Add(this.LaboBox);
+            this.Controls.Add(this.citoyenBox);
             this.Controls.Add(this.label1);
-            this.Name = "Labo";
+            this.Name = "LaboV";
             this.Size = new System.Drawing.Size(629, 528);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,8 +95,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox citoyenBox;
+        private System.Windows.Forms.ComboBox LaboBox;
         private System.Windows.Forms.Button testerbtn;
     }
 }

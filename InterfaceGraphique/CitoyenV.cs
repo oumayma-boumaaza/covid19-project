@@ -84,7 +84,7 @@ namespace InterfaceGraphique
             QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
             QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.M);
             QRCode qRCode = new QRCode(qRCodeData);
-            Bitmap QRCodeImg = qRCode.GetGraphic(20, color, Color.White, true);
+            Bitmap QRCodeImg = qRCode.GetGraphic(25, color, Color.White, true);
             img.Image = QRCodeImg;
 
         }

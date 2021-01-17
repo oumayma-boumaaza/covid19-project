@@ -235,6 +235,7 @@
             // 
             // TestV
             // 
+            this.TestV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(134)))), ((int)(((byte)(251)))));
             this.TestV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TestV.Location = new System.Drawing.Point(0, 0);
             this.TestV.Name = "TestV";
@@ -244,6 +245,7 @@
             // 
             // CentreV
             // 
+            this.CentreV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(134)))), ((int)(((byte)(251)))));
             this.CentreV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CentreV.Location = new System.Drawing.Point(0, 0);
             this.CentreV.Name = "CentreV";
@@ -270,6 +272,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);

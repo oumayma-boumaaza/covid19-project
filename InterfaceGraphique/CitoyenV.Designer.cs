@@ -147,7 +147,7 @@
             // 
             this.img.Location = new System.Drawing.Point(309, 390);
             this.img.Name = "img";
-            this.img.Size = new System.Drawing.Size(219, 126);
+            this.img.Size = new System.Drawing.Size(219, 181);
             this.img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img.TabIndex = 11;
             this.img.TabStop = false;
@@ -169,7 +169,7 @@
             this.Controls.Add(this.citoyensBox);
             this.Controls.Add(this.label1);
             this.Name = "CitoyenV";
-            this.Size = new System.Drawing.Size(629, 528);
+            this.Size = new System.Drawing.Size(692, 587);
             ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
