@@ -39,6 +39,8 @@
             this.dateNaissance = new System.Windows.Forms.TextBox();
             this.boxetat = new System.Windows.Forms.TextBox();
             this.img = new System.Windows.Forms.PictureBox();
+            this.ContacterBtn = new System.Windows.Forms.Button();
+            this.ConfnButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,11 +154,37 @@
             this.img.TabIndex = 11;
             this.img.TabStop = false;
             // 
+            // ContacterBtn
+            // 
+            this.ContacterBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ContacterBtn.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContacterBtn.Location = new System.Drawing.Point(581, 161);
+            this.ContacterBtn.Name = "ContacterBtn";
+            this.ContacterBtn.Size = new System.Drawing.Size(116, 50);
+            this.ContacterBtn.TabIndex = 12;
+            this.ContacterBtn.Text = "Contacter";
+            this.ContacterBtn.UseVisualStyleBackColor = true;
+            this.ContacterBtn.Click += new System.EventHandler(this.ContacterBtn_Click);
+            // 
+            // ConfnButton
+            // 
+            this.ConfnButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ConfnButton.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfnButton.Location = new System.Drawing.Point(581, 281);
+            this.ConfnButton.Name = "ConfnButton";
+            this.ConfnButton.Size = new System.Drawing.Size(116, 50);
+            this.ConfnButton.TabIndex = 13;
+            this.ConfnButton.Text = "Confiner";
+            this.ConfnButton.UseVisualStyleBackColor = true;
+            this.ConfnButton.Click += new System.EventHandler(this.ConfnButton_Click);
+            // 
             // CitoyenV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(134)))), ((int)(((byte)(251)))));
+            this.Controls.Add(this.ConfnButton);
+            this.Controls.Add(this.ContacterBtn);
             this.Controls.Add(this.img);
             this.Controls.Add(this.boxetat);
             this.Controls.Add(this.dateNaissance);
@@ -169,7 +197,7 @@
             this.Controls.Add(this.citoyensBox);
             this.Controls.Add(this.label1);
             this.Name = "CitoyenV";
-            this.Size = new System.Drawing.Size(692, 587);
+            this.Size = new System.Drawing.Size(733, 587);
             ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,5 +217,7 @@
         private System.Windows.Forms.TextBox dateNaissance;
         private System.Windows.Forms.TextBox boxetat;
         private System.Windows.Forms.PictureBox img;
+        private System.Windows.Forms.Button ContacterBtn;
+        private System.Windows.Forms.Button ConfnButton;
     }
 }

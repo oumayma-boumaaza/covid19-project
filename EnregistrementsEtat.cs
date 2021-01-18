@@ -7,7 +7,7 @@ namespace EtatCovid
 {
    public class EnregistrementsEtat
     {
-        public static List<EnregistrementsEtat> Etats = new List<EnregistrementsEtat>();
+        public static List<EnregistrementsEtat> Etats = LiasonDB.ListerEtats();
         public DateTime DateEtat;
         public string CinCitoyen;
         public  Etat etat;

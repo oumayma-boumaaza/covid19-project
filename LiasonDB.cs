@@ -392,7 +392,44 @@ namespace EtatCovid
 
         }
         #endregion
+        public static List<EnregistrementsEtat> ListerEtats()
+        {
+           
+            var etats = new List<EnregistrementsEtat>();
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = "SELECT * FROM EnregistrementEtats";
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataRow row = table.Rows[i];
+
+                    etats.Add(new EnregistrementsEtat(DateTime.Parse(row["DateEtat"].ToString()),
+                        row["CinCitoyen"].ToString(),
+                        (Etat)int.Parse(row["Etat"].ToString())));
+        
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+
+            }
+            return etats;
+        }
+
         #region confinement
+
         public static void InsertConfinement(DateTime debut, DateTime fin, string cin)
         {
             try

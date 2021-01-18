@@ -61,9 +61,9 @@
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(34, 44);
+            this.cartesianChart1.Location = new System.Drawing.Point(16, 44);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(649, 254);
+            this.cartesianChart1.Size = new System.Drawing.Size(691, 245);
             this.cartesianChart1.TabIndex = 1;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -106,7 +106,6 @@
             this.label5.Size = new System.Drawing.Size(58, 25);
             this.label5.TabIndex = 1;
             this.label5.Text = "0 Cas";
-           
             // 
             // label4
             // 

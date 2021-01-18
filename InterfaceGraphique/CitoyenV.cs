@@ -89,7 +89,38 @@ namespace InterfaceGraphique
 
         }
 
+        private void ContacterBtn_Click(object sender, EventArgs e)
+        {
+            string selectedCitoyen = (string)citoyensBox.SelectedItem;
+            if (selectedCitoyen == null)
+            {
+                MessageBox.Show("choisissez un citoyen !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-      
+            ContactDialogue.citoyens = citoyens;
+            var d = new ContactDialogue();
+            d.FillData(selectedCitoyen);
+            if (d.ShowDialog(this) == DialogResult.OK)
+            {
+                citoyens.First(c => c.cin == selectedCitoyen).Contacter(citoyens.First(c => c.cin == d.resultat));
+                MessageBox.Show($"Contact effectué entre {selectedCitoyen} et {d.resultat}.");
+            }
+          
+        }
+
+        private void ConfnButton_Click(object sender, EventArgs e)
+        {
+            string selectedCitoyen = (string) citoyensBox.SelectedItem;
+            if (selectedCitoyen == null)
+            {
+                MessageBox.Show("choisissez un citoyen !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var citoyen = citoyens.First(c => c.cin == selectedCitoyen);
+            citoyen.SeConfiner(DateTime.Now);
+            MessageBox.Show("Le Confinement va commencer", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

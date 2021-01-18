@@ -76,6 +76,12 @@
     <Compile Include="CitoyenV.Designer.cs">
       <DependentUpon>CitoyenV.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContactDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactDialogue.Designer.cs">
+      <DependentUpon>ContactDialogue.cs</DependentUpon>
+    </Compile>
     <Compile Include="DiagramV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CitoyenV.resx">
       <DependentUpon>CitoyenV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactDialogue.resx">
+      <DependentUpon>ContactDialogue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiagramV.resx">
       <DependentUpon>DiagramV.cs</DependentUpon>
