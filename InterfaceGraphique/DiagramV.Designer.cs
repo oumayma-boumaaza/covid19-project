@@ -33,17 +33,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.CasV = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.CasS = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.CasI = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.NbrT = new System.Windows.Forms.Label();
+            this.NbrLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,22 +90,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.CasV);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(34, 367);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 71);
             this.panel1.TabIndex = 4;
             // 
-            // label5
+            // CasV
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(157, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "0 Cas";
+            this.CasV.AutoSize = true;
+            this.CasV.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasV.Location = new System.Drawing.Point(157, 23);
+            this.CasV.Name = "CasV";
+            this.CasV.Size = new System.Drawing.Size(58, 25);
+            this.CasV.TabIndex = 1;
+            this.CasV.Text = "0 Cas";
             // 
             // label4
             // 
@@ -120,22 +120,22 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.CasS);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(383, 367);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 71);
             this.panel2.TabIndex = 5;
             // 
-            // label6
+            // CasS
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(143, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "0 Cas";
+            this.CasS.AutoSize = true;
+            this.CasS.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasS.Location = new System.Drawing.Point(143, 24);
+            this.CasS.Name = "CasS";
+            this.CasS.Size = new System.Drawing.Size(58, 25);
+            this.CasS.TabIndex = 3;
+            this.CasS.Text = "0 Cas";
             // 
             // label7
             // 
@@ -150,22 +150,22 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.CasI);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(34, 463);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 71);
             this.panel3.TabIndex = 5;
             // 
-            // label8
+            // CasI
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(157, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 25);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "0 Cas";
+            this.CasI.AutoSize = true;
+            this.CasI.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasI.Location = new System.Drawing.Point(157, 23);
+            this.CasI.Name = "CasI";
+            this.CasI.Size = new System.Drawing.Size(58, 25);
+            this.CasI.TabIndex = 5;
+            this.CasI.Text = "0 Cas";
             // 
             // label9
             // 
@@ -180,32 +180,32 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.NbrT);
+            this.panel4.Controls.Add(this.NbrLabel);
             this.panel4.Location = new System.Drawing.Point(383, 463);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 71);
             this.panel4.TabIndex = 5;
             // 
-            // label10
+            // NbrT
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(191, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 25);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "0 ";
+            this.NbrT.AutoSize = true;
+            this.NbrT.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbrT.Location = new System.Drawing.Point(191, 24);
+            this.NbrT.Name = "NbrT";
+            this.NbrT.Size = new System.Drawing.Size(62, 25);
+            this.NbrT.TabIndex = 5;
+            this.NbrT.Text = "0 Test";
             // 
-            // label11
+            // NbrLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Nirmala UI", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(10, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(173, 25);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Nombre des Tests:";
+            this.NbrLabel.AutoSize = true;
+            this.NbrLabel.Font = new System.Drawing.Font("Nirmala UI", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbrLabel.Location = new System.Drawing.Point(10, 24);
+            this.NbrLabel.Name = "NbrLabel";
+            this.NbrLabel.Size = new System.Drawing.Size(173, 25);
+            this.NbrLabel.TabIndex = 4;
+            this.NbrLabel.Text = "Nombre des Tests:";
             // 
             // DiagramV
             // 
@@ -244,13 +244,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label CasV;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label CasS;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label CasI;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label NbrT;
+        private System.Windows.Forms.Label NbrLabel;
     }
 }

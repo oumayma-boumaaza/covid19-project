@@ -1,7 +1,9 @@
 ﻿using EtatCovid;
 using LiveCharts;
 using LiveCharts.Wpf;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using SeriesCollection = LiveCharts.SeriesCollection;
 
@@ -23,7 +25,7 @@ namespace InterfaceGraphique
                 },
                 new LineSeries
                 {
-                    Title = "Sain",
+                    Title = "Porteurs De Virus",
                     Values = new ChartValues<int> { InfectedData(3), InfectedData(4), InfectedData(5), InfectedData(6), InfectedData(7), InfectedData(8), InfectedData(9), InfectedData(10), InfectedData(11), InfectedData(12), InfectedData(1) },
                      PointGeometry = DefaultGeometries.Circle,
                      Stroke = System.Windows.Media.Brushes.Red
@@ -37,8 +39,16 @@ namespace InterfaceGraphique
             cartesianChart1.AxisY.Add(new Axis
             {
                 Title = "CAS",
+                MinValue = 0
             });
             cartesianChart1.LegendLocation = LegendLocation.Top;
+
+            //rapport
+
+            CasV.Text = EnregistrementsEtat.Etats.Count( e => e.etat == Etat.Vaccine && e.DateEtat.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Cas";
+            CasS.Text = EnregistrementsEtat.Etats.Count( e => e.etat == Etat.Sain && e.DateEtat.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Cas";
+            CasI.Text = EnregistrementsEtat.Etats.Count( e => e.etat == Etat.PorteurDeVirus && e.DateEtat.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Cas";
+            NbrT.Text = EnregistrementLabo.Testes.Count( t => t.DateTest.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Tests";
         }
         public int InfectedData(int month)
         {
@@ -58,6 +68,7 @@ namespace InterfaceGraphique
                     counter++;
             return counter;
         }
+
 
     }
 

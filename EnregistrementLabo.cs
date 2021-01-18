@@ -12,12 +12,12 @@ namespace EtatCovid
 
     public class EnregistrementLabo
     {
-        public static List<EnregistrementLabo> Testes = new List<EnregistrementLabo>();
+        public static List<EnregistrementLabo> Testes = LiasonDB.ListerTests();
         public DateTime DateTest;
         public string CinCitoyen;
         public bool Resultat;
         public string NomLabo;
-        private EnregistrementLabo(DateTime date, string cin, bool result,string nomLabo)
+        public EnregistrementLabo(DateTime date, string cin, bool result, string nomLabo)
         {
             DateTest = date;
             CinCitoyen = cin;
@@ -25,15 +25,15 @@ namespace EtatCovid
             NomLabo = nomLabo;
         }
 
-        public static void EnregistrerTest(DateTime date, string cin, bool result,string nomLabo)
+        public static void EnregistrerTest(DateTime date, string cin, bool result, string nomLabo)
         {
-            Testes.Add(new EnregistrementLabo(date, cin, result,nomLabo));
+            Testes.Add(new EnregistrementLabo(date, cin, result, nomLabo));
             try
             {
-                LiasonDB.InsertEnregistrementTest(date,cin,result,nomLabo);
+                LiasonDB.InsertEnregistrementTest(date, cin, result, nomLabo);
             }
             catch (Exception ex)
-            {   
+            {
                 Console.WriteLine(ex.Message);
             }
         }

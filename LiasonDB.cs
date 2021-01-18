@@ -87,7 +87,7 @@ namespace EtatCovid
         }
         public static List<Citoyen> ListerCitoyens()
         {
-            if(citoyens != null)
+            if (citoyens != null)
             {
                 return citoyens;
             }
@@ -260,7 +260,7 @@ namespace EtatCovid
         {
             if (centres != null)
                 return centres;
-             centres = new List<CentreDeVaccination>();
+            centres = new List<CentreDeVaccination>();
             try
             {
                 if (cnx.State != ConnectionState.Open)
@@ -291,8 +291,8 @@ namespace EtatCovid
         }
         #endregion
         #region enreglaboratoire
-        public static void InsertEnregistrementTest(DateTime date,string cin,bool result, string nomLabo)
-  {
+        public static void InsertEnregistrementTest(DateTime date, string cin, bool result, string nomLabo)
+        {
 
             int res = result ? 1 : 0;
             try
@@ -316,6 +316,41 @@ namespace EtatCovid
             }
 
         }
+        public static List<EnregistrementLabo> ListerTests()
+        {
+
+            var tests = new List<EnregistrementLabo>();
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = "SELECT * FROM EnregistrementsLabo";
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataRow row = table.Rows[i];
+
+                    tests.Add(new EnregistrementLabo(DateTime.Parse(row["DateTest"].ToString()),
+                        row["CinCitoyen"].ToString(), (bool)row["Resultat"], row["Labo"].ToString()));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+
+            }
+            return tests;
+        }
+
         #endregion
         #region enregvaccins
         public static void InsertEnregistrementVaccins(DateTime date, string cin, string centreDeVaccination)
@@ -394,7 +429,7 @@ namespace EtatCovid
         #endregion
         public static List<EnregistrementsEtat> ListerEtats()
         {
-           
+
             var etats = new List<EnregistrementsEtat>();
             try
             {
@@ -412,7 +447,7 @@ namespace EtatCovid
                     etats.Add(new EnregistrementsEtat(DateTime.Parse(row["DateEtat"].ToString()),
                         row["CinCitoyen"].ToString(),
                         (Etat)int.Parse(row["Etat"].ToString())));
-        
+
                 }
             }
             catch (Exception ex)
