@@ -376,6 +376,41 @@ namespace EtatCovid
             }
 
         }
+        public static List<EnregistrementsVaccin> ListerVaccins()
+        {
+
+            var vaccins = new List<EnregistrementsVaccin>();
+            try
+            {
+                if (cnx.State != ConnectionState.Open)
+                    cnx.Open();
+                cmd.Connection = cnx;
+                cmd.CommandText = "SELECT * FROM EnregistrementsVaccins";
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataRow row = table.Rows[i];
+
+                    vaccins.Add(new EnregistrementsVaccin(DateTime.Parse(row["DateVacc"].ToString()),
+                        row["CinCitoyen"].ToString(),
+                       row["CentreDeVaccination"].ToString()));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                    cnx.Close();
+
+            }
+            return vaccins;
+        }
         #endregion
         #region enregRencontres
         public static void InsertEnregistrementRencontre(DateTime date, string cin1, string cin2)

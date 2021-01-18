@@ -11,7 +11,7 @@ namespace EtatCovid
 {
     public class EnregistrementsVaccin
     {
-        public static List<EnregistrementsVaccin> Vaccins = new List<EnregistrementsVaccin>();
+        public static List<EnregistrementsVaccin> Vaccins = LiasonDB.ListerVaccins();
         public DateTime DateVacc;
         public string CinCitoyen;
         public string CentreDeVaccination;

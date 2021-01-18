@@ -45,7 +45,7 @@ namespace InterfaceGraphique
 
             //rapport
 
-            CasV.Text = EnregistrementsEtat.Etats.Count( e => e.etat == Etat.Vaccine && e.DateEtat.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Cas";
+            CasV.Text = EnregistrementsVaccin.Vaccins.Count(c => c.DateVacc.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Vaccins";
             CasS.Text = EnregistrementsEtat.Etats.Count( e => e.etat == Etat.Sain && e.DateEtat.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Cas";
             CasI.Text = EnregistrementsEtat.Etats.Count( e => e.etat == Etat.PorteurDeVirus && e.DateEtat.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Cas";
             NbrT.Text = EnregistrementLabo.Testes.Count( t => t.DateTest.ToShortDateString() == DateTime.Now.ToShortDateString()) + " Tests";
